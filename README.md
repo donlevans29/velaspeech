@@ -109,3 +109,91 @@ Vela Speech Therapy
 | 🟢 Minor polish | 2 | Optional but recommended |
 
 > **Most impactful remaining fix:** Hero subtext (`"You know something is wrong"`) — it is the first line most visitors read and the strongest remaining deficit-framing on the page.
+
+
+# Site Builder Options for Vela Speech Therapy
+
+> Feature exploration: drag-and-drop / visual editing capability for the Vela design system.
+> Track each option as a separate issue or milestone depending on direction chosen.
+
+---
+
+## Option A — Custom Drag-and-Drop Builder
+**Effort:** Large (2–3 build sessions)
+**Strategic fit:** High — potential standalone product
+
+A full custom builder scoped to the Vela design system. Pre-built blocks (Hero, Stat Strip, Cards, Forms, Testimonials) that are draggable, inline-editable, and export clean HTML.
+
+### What's included
+- [ ] Block library mapped to existing Vela components
+- [ ] Drag-and-drop canvas with reorder support
+- [ ] Inline text editing per block
+- [ ] Section toggle (show/hide blocks)
+- [ ] HTML export that matches existing codebase conventions
+- [ ] Design system constraints enforced (fonts, colors, spacing — no off-brand output)
+
+### Notes
+> This is a real product in itself. A design-system-aware builder scoped to speech therapy practices — or pediatric therapy practices broadly — could be a genuinely differentiated offer for the product roadmap.
+
+---
+
+## Option B — Lightweight Content Editor
+**Effort:** Medium (1 build session)
+**Strategic fit:** Medium — solves the immediate client handoff problem
+
+A side-panel editor that lets a non-technical user click any text on the page, edit it inline, toggle sections on/off, and export the updated HTML. No drag-and-drop canvas.
+
+### What's included
+- [ ] Click-to-edit on all text nodes
+- [ ] Section visibility toggles (show/hide)
+- [ ] One-click HTML export
+- [ ] Change preview before export
+- [ ] No backend required — runs entirely in the browser
+
+### Notes
+> Covers ~80% of what a non-technical practice owner needs day-to-day. Fastest path to client independence without a full builder investment.
+
+---
+
+## Option C — Port to Existing Visual Builder
+**Effort:** Small-Medium (setup + migration)
+**Strategic fit:** Low for product play, high for fast handoff
+
+Port the Vela design system into Webflow, Framer, or a similar no-code platform. Full visual editor available immediately without custom development.
+
+### Platforms to evaluate
+- [ ] **Webflow** — most control, steepest learning curve for client
+- [ ] **Framer** — best for animation fidelity, React-based
+- [ ] **Notion Sites / Super** — simplest, least design control
+
+### Trade-offs
+| | Webflow | Framer | Custom (Option A) |
+|---|---|---|---|
+| Design fidelity | High | High | Exact |
+| Client ease of use | Medium | Medium | High (scoped UX) |
+| Product reusability | None | None | Full |
+| Time to ship | Fast | Fast | Slow |
+| Ongoing platform cost | $$ | $$ | $0 |
+
+### Notes
+> Recommended only if speed to handoff matters more than owning the stack. Not compatible with the product-building direction.
+
+---
+
+## Recommendation
+
+| Priority | Option | Reason |
+|---|---|---|
+| 🥇 Long term | **Option A** | Aligns with product roadmap; reusable across therapy practice clients |
+| 🥈 Short term | **Option B** | Unblocks client self-service immediately; low effort |
+| 🥉 Fallback | **Option C** | If timeline demands faster handoff than A or B can deliver |
+
+> **Suggested sequence:** Ship Option B now to unblock the client. Build Option A as a product feature in parallel.
+
+---
+
+## Open Questions
+- [ ] Who is the target user of the builder — the practice owner, or an agency managing multiple practices?
+- [ ] Should the builder support multiple design systems or be Vela-specific for now?
+- [ ] Is HTML export the right output, or should it write to a CMS / deploy to Netlify directly?
+- [ ] What's the MVP scope for Option A to be shippable as a product feature?
