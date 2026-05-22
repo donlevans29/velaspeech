@@ -1476,7 +1476,7 @@
     <button type="submit" class="form-submit" id="main-submit-btn">Schedule My Free Consultation →</button>
     <div class="form-disclaimer">No spam. No pressure. Just a conversation.</div>
   </form>
-  
+
 </div>
 </section>
 
@@ -1516,18 +1516,68 @@
   reveals.forEach(el => observer.observe(el));
 
   // Form submit
-  document.querySelector('.form-submit').addEventListener('click', function() {
-    const name = document.querySelector('input[type="text"]').value;
-    if (name) {
-      this.textContent = '✓ We\'ll be in touch soon!';
-      this.style.background = '#5A7A60';
-      this.style.transform = 'none';
-      this.style.boxShadow = 'none';
-    } else {
-      document.querySelector('input[type="text"]').focus();
-      document.querySelector('input[type="text"]').style.borderColor = '#C4622D';
-    }
-  });
+  // NEW — Netlify AJAX submission (no page reload)
+    const mainForm = document.getElementById('main-contact-form');
+    const mainBtn = document.getElementById('main-submit-btn');
+
+    mainForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const nameVal = mainForm.querySelector('input[name="name"]').value.trim();
+      const phoneVal = mainForm.querySelector('input[name="phone"]').value.trim();
+
+      if (!nameVal || !phoneVal) {
+        if (!nameVal) {
+          mainForm.querySelector('input[name="name"]').style.borderColor = '#C4622D';
+          mainForm.querySelector('input[name="name"]').focus();
+        } else {
+          mainForm.querySelector('input[name="phone"]').style.borderColor = '#C4622D';
+          mainForm.querySelector('input[name="phone"]').focus();
+        }
+        return;
+      }
+
+      mainBtn.textContent = 'Sending…';
+      mainBtn.disabled = true;
+      mainBtn.style.opacity = '0.7';
+
+      try {
+        const formData = new FormData(mainForm);
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString(),
+        });
+
+        if (response.ok) {
+          mainBtn.textContent = "✓ We'll be in touch within 24 hours!";
+          mainBtn.style.background = '#5A7A60';
+          mainBtn.style.opacity = '1';
+          mainBtn.style.transform = 'none';
+          mainBtn.style.boxShadow = 'none';
+          mainForm.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        mainBtn.textContent = 'Something went wrong — please call us directly';
+        mainBtn.style.background = '#C4622D';
+        mainBtn.style.opacity = '1';
+        mainBtn.disabled = false;
+      }
+    });
+  // document.querySelector('.form-submit').addEventListener('click', function() {
+  //   const name = document.querySelector('input[type="text"]').value;
+  //   if (name) {
+  //     this.textContent = '✓ We\'ll be in touch soon!';
+  //     this.style.background = '#5A7A60';
+  //     this.style.transform = 'none';
+  //     this.style.boxShadow = 'none';
+  //   } else {
+  //     document.querySelector('input[type="text"]').focus();
+  //     document.querySelector('input[type="text"]').style.borderColor = '#C4622D';
+  //   }
+  // });
 </script>
 
 </body>
