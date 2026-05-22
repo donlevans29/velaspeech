@@ -1438,38 +1438,46 @@
     </div>
   </div>
 
-  <div class="cta-right">
-    <div class="cta-form">
-      <div class="form-headline">Book Your Free Call</div>
-      <div class="form-sub">Takes 2 minutes. We'll reach out within 24 hours.</div>
+<div class="cta-form">
+  <div class="form-headline">Book Your Free Call</div>
+  <div class="form-sub">Takes 2 minutes. We'll reach out within 24 hours.</div>
 
-      <div class="form-group">
-        <label class="form-label">Your Name</label>
-        <input class="form-input" type="text" placeholder="Sarah Johnson">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Phone Number</label>
-        <input class="form-input" type="tel" placeholder="(614) 555-0100">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Child's Age</label>
-        <select class="form-select">
-          <option value="">Select age range</option>
-          <option>Under 2 years</option>
-          <option>2–3 years</option>
-          <option>3–5 years</option>
-          <option>5–8 years</option>
-          <option>8+ years</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">What's your biggest concern? (optional)</label>
-        <textarea class="form-textarea" placeholder="e.g. He's hard to understand, she gets frustrated when she can't communicate..."></textarea>
-      </div>
-      <button class="form-submit">Schedule My Free Consultation →</button>
-      <div class="form-disclaimer">No spam. No pressure. Just a conversation.</div>
+  <form id="main-contact-form" name="main-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <!-- Netlify required hidden fields -->
+    <input type="hidden" name="form-name" value="main-contact">
+    <p style="display:none;">
+      <label>Don't fill this out: <input name="bot-field"></label>
+    </p>
+
+    <div class="form-group">
+      <label class="form-label">Your Name</label>
+      <input class="form-input" type="text" name="name" placeholder="Sarah Johnson" required>
     </div>
-  </div>
+    <div class="form-group">
+      <label class="form-label">Phone Number</label>
+      <input class="form-input" type="tel" name="phone" placeholder="(614) 555-0100" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Child's Age</label>
+      <select class="form-select" name="child-age" required>
+        <option value="">Select age range</option>
+        <option>Under 2 years</option>
+        <option>2–3 years</option>
+        <option>3–5 years</option>
+        <option>5–8 years</option>
+        <option>8+ years</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">What's your biggest concern? (optional)</label>
+      <textarea class="form-textarea" name="message"
+        placeholder="e.g. He's hard to understand, she gets frustrated when she can't communicate..."></textarea>
+    </div>
+    <button type="submit" class="form-submit" id="main-submit-btn">Schedule My Free Consultation →</button>
+    <div class="form-disclaimer">No spam. No pressure. Just a conversation.</div>
+  </form>
+  
+</div>
 </section>
 
 <!-- FOOTER -->
