@@ -1136,7 +1136,7 @@
     <div class="section-eyebrow reveal">Why summer</div>
     <h2 class="section-headline reveal">The most <em>overlooked</em> window<br>for speech progress.</h2>
     <p class="why-intro reveal">
-      Summer isn't just a break it's one of the most powerful opportunities for speech development.
+      Summer isn't just a break — it's one of the most powerful opportunities for speech development.
       Without school interruptions, children can build momentum faster than at any other time of year.
     </p>
 
@@ -1172,7 +1172,7 @@
     <div class="programs-header reveal">
       <div class="section-eyebrow">Summer programs</div>
       <h2 class="section-headline">Find the right <em>fit.</em></h2>
-      <p>Every child's communication journey is different. Choose the program that matches where your child is and
+      <p>Every child's communication journey is different. Choose the program that matches where your child is — and
         where you want them to go by September.</p>
     </div>
 
@@ -1485,42 +1485,51 @@
         <div class="form-headline">Reserve Your Free Call</div>
         <div class="form-sub">Takes 2 minutes. We'll reach out within 24 hours.</div>
 
-        <div class="form-group">
-          <label class="form-label">Your Name</label>
-          <input class="form-input" type="text" placeholder="Sarah Johnson">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input class="form-input" type="tel" placeholder="(614) 555-0100">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Child's Age</label>
-          <select class="form-select">
-            <option value="">Select age range</option>
-            <option>Under 2 years</option>
-            <option>2–3 years</option>
-            <option>3–5 years</option>
-            <option>5–8 years</option>
-            <option>8+ years</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Which program are you interested in?</label>
-          <select class="form-select">
-            <option value="">Select a program</option>
-            <option>Little Voices (Ages 2–4)</option>
-            <option>Summer Strong (Ages 4–8)</option>
-            <option>Think & Connect (Ages 7–12)</option>
-            <option>Not sure — help me choose</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Anything you'd like us to know? (optional)</label>
-          <textarea class="form-textarea"
-            placeholder="e.g. He's been on the school waitlist, she starts kindergarten in the fall..."></textarea>
-        </div>
-        <button class="form-submit">Reserve My Free Call →</button>
-        <div class="form-disclaimer">No spam. No pressure. Just a conversation.</div>
+        <form id="summer-contact-form" name="summer-programs" method="POST" data-netlify="true"
+          netlify-honeypot="bot-field">
+          <!-- Netlify hidden fields -->
+          <input type="hidden" name="form-name" value="summer-programs">
+          <p style="display:none;">
+            <label>Don't fill this out: <input name="bot-field"></label>
+          </p>
+
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input class="form-input" type="text" name="name" placeholder="Sarah Johnson" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input class="form-input" type="tel" name="phone" placeholder="(614) 555-0100" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Child's Age</label>
+            <select class="form-select" name="child-age" required>
+              <option value="">Select age range</option>
+              <option>Under 2 years</option>
+              <option>2–3 years</option>
+              <option>3–5 years</option>
+              <option>5–8 years</option>
+              <option>8+ years</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Which program are you interested in?</label>
+            <select class="form-select" name="program-interest">
+              <option value="">Select a program</option>
+              <option>Little Voices (Ages 2–4)</option>
+              <option>Summer Strong (Ages 4–8)</option>
+              <option>Think &amp; Connect (Ages 7–12)</option>
+              <option>Not sure — help me choose</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Anything you'd like us to know? (optional)</label>
+            <textarea class="form-textarea" name="message"
+              placeholder="e.g. He's been on the school waitlist, she starts kindergarten in the fall..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="summer-submit-btn">Reserve My Free Call →</button>
+          <div class="form-disclaimer">No spam. No pressure. Just a conversation.</div>
+        </form>
       </div>
     </div>
   </section>
@@ -1572,18 +1581,57 @@
       });
     });
 
-    // ===== FORM SUBMIT =====
-    document.querySelector('.form-submit').addEventListener('click', function () {
-      const name = document.querySelector('input[type="text"]').value;
-      if (name) {
-        this.textContent = "✓ We'll be in touch soon!";
-        this.style.background = '#5A7A60';
-        this.style.transform = 'none';
-        this.style.boxShadow = 'none';
-      } else {
-        const nameInput = document.querySelector('input[type="text"]');
-        nameInput.focus();
-        nameInput.style.borderColor = '#C4622D';
+    // ===== NETLIFY FORM SUBMIT (AJAX — no page reload) =====
+    const summerForm = document.getElementById('summer-contact-form');
+    const summerBtn = document.getElementById('summer-submit-btn');
+
+    summerForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      // Basic client-side validation
+      const nameVal = summerForm.querySelector('input[name="name"]').value.trim();
+      const phoneVal = summerForm.querySelector('input[name="phone"]').value.trim();
+      if (!nameVal || !phoneVal) {
+        if (!nameVal) {
+          summerForm.querySelector('input[name="name"]').style.borderColor = '#C4622D';
+          summerForm.querySelector('input[name="name"]').focus();
+        } else {
+          summerForm.querySelector('input[name="phone"]').style.borderColor = '#C4622D';
+          summerForm.querySelector('input[name="phone"]').focus();
+        }
+        return;
+      }
+
+      // Loading state
+      summerBtn.textContent = 'Sending…';
+      summerBtn.disabled = true;
+      summerBtn.style.opacity = '0.7';
+
+      try {
+        const formData = new FormData(summerForm);
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString(),
+        });
+
+        if (response.ok) {
+          // Success state
+          summerBtn.textContent = "✓ We'll be in touch within 24 hours!";
+          summerBtn.style.background = '#5A7A60';
+          summerBtn.style.opacity = '1';
+          summerBtn.style.transform = 'none';
+          summerBtn.style.boxShadow = 'none';
+          summerForm.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      } catch (err) {
+        // Error state — fall back gracefully
+        summerBtn.textContent = 'Something went wrong — please call us directly';
+        summerBtn.style.background = '#C4622D';
+        summerBtn.style.opacity = '1';
+        summerBtn.disabled = false;
       }
     });
   </script>
