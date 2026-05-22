@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summer Speech Programs | Vela Speech Therapy | Columbus, Ohio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* =============================================
+     PASTE YOUR EXISTING :root VARIABLES HERE
+     (copy from index.html — keeping them in sync)
+  ============================================= */
+    :root {
+      --cream: #FAF7F2;
+      --warm-white: #FFFEF9;
+      --deep-navy: #0E1B2E;
+      --sage: #5A7A60;
+      --sage-light: #8FAF95;
+      --terracotta: #C4622D;
+      --terracotta-light: #E8A07A;
+      --gold: #D4A853;
+      --text-dark: #1A2332;
+      --text-mid: #4A5568;
+      --text-light: #8A9BB0;
+      --border: rgba(14, 27, 46, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* Noise texture — matches index.html */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* ===== NAV — copy of index.html nav ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--deep-navy);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--terracotta);
+    }
+
+    .nav-cta {
+      background: var(--terracotta);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-cta:hover {
+      background: var(--deep-navy);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(196, 98, 45, 0.3);
+    }
+
+    /* ===== SHARED SECTION UTILITIES ===== */
+    section {
+      padding: 100px 48px;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 18px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+
+    .section-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--deep-navy);
+      margin-bottom: 20px;
+    }
+
+    .section-headline em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(196, 98, 45, 0.25);
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(196, 98, 45, 0.35);
+      background: #B3571F;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 48px 80px;
+      position: relative;
+      overflow: hidden;
+      background: var(--warm-white);
+    }
+
+    /* Decorative sun arc — summer motif */
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -180px;
+      top: -180px;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 168, 83, 0.15) 0%, rgba(196, 98, 45, 0.06) 50%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: -80px;
+      bottom: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(90, 122, 96, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 168, 83, 0.12);
+      border: 1px solid rgba(212, 168, 83, 0.35);
+      color: #A07A2A;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-eyebrow::before {
+      content: '☀';
+      font-size: 0.85rem;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--deep-navy);
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s 0.15s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+      max-width: 560px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.8s 0.3s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.45s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(90, 122, 96, 0.1);
+      border: 1px solid rgba(90, 122, 96, 0.2);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      color: var(--sage);
+      font-weight: 500;
+      animation: fadeUp 0.8s 0.6s ease forwards;
+      opacity: 0;
+      margin-top: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--sage);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+      }
+    }
+
+    /* ===== WHY SUMMER MATTERS ===== */
+    .why-section {
+      background: var(--deep-navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-section::before {
+      content: '';
+      position: absolute;
+      right: -100px;
+      top: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212, 168, 83, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .why-section .section-eyebrow {
+      color: var(--terracotta-light);
+    }
+
+    .why-section .section-eyebrow::before {
+      background: var(--terracotta-light);
+    }
+
+    .why-section .section-headline {
+      color: white;
+    }
+
+    .why-section .section-headline em {
+      color: var(--gold);
+    }
+
+    .why-intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+      max-width: 640px;
+      margin-bottom: 60px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--terracotta));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .why-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .why-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .why-desc {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 300;
+    }
+
+    /* ===== PROGRAMS ===== */
+    .programs-section {
+      background: var(--cream);
+    }
+
+    .programs-header {
+      max-width: 680px;
+      margin-bottom: 64px;
+    }
+
+    .programs-header p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .program-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(14, 27, 46, 0.07);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .program-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 56px rgba(14, 27, 46, 0.13);
+    }
+
+    /* Featured card */
+    .program-card.featured {
+      border: 2px solid var(--terracotta);
+      transform: scale(1.03);
+    }
+
+    .program-card.featured:hover {
+      transform: scale(1.03) translateY(-6px);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--terracotta);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    .program-header {
+      padding: 32px 28px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .program-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--sage);
+      background: rgba(90, 122, 96, 0.1);
+      border-radius: 50px;
+      padding: 4px 12px;
+      margin-bottom: 14px;
+    }
+
+    .program-card.featured .program-tag {
+      color: var(--terracotta);
+      background: rgba(196, 98, 45, 0.1);
+    }
+
+    .program-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--deep-navy);
+      line-height: 1.2;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .program-ages {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .program-body {
+      padding: 24px 28px;
+    }
+
+    .program-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 22px;
+    }
+
+    .program-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .program-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .program-feature-dot {
+      width: 18px;
+      height: 18px;
+      background: rgba(90, 122, 96, 0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage);
+      font-size: 0.6rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .program-card.featured .program-feature-dot {
+      background: rgba(196, 98, 45, 0.1);
+      color: var(--terracotta);
+    }
+
+    .program-cta {
+      display: block;
+      text-align: center;
+      background: var(--cream);
+      color: var(--text-mid);
+      border: 1.5px solid var(--border);
+      padding: 13px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .program-card.featured .program-cta {
+      background: var(--terracotta);
+      color: white;
+      border-color: var(--terracotta);
+      box-shadow: 0 4px 16px rgba(196, 98, 45, 0.25);
+    }
+
+    .program-cta:hover {
+      background: var(--deep-navy);
+      color: white;
+      border-color: var(--deep-navy);
+      transform: translateY(-1px);
+    }
+
+    /* ===== WHAT TO EXPECT ===== */
+    .expect-section {
+      background: var(--warm-white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .expect-intro p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .expect-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .expect-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 20px 24px;
+      background: var(--cream);
+      border-radius: 14px;
+      border-left: 3px solid var(--sage);
+      transition: all 0.25s ease;
+    }
+
+    .expect-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 20px rgba(90, 122, 96, 0.1);
+    }
+
+    .expect-num {
+      width: 34px;
+      height: 34px;
+      background: rgba(90, 122, 96, 0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .expect-text strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .expect-text p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ===== PULLQUOTE STRIP — matches transform-section in index.html ===== */
+    .pullquote-strip {
+      background: var(--sage);
+      padding: 80px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pullquote-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .pullquote-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .pullquote-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 600;
+      color: white;
+      line-height: 1.45;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .pullquote-source {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-section {
+      background: var(--cream);
+    }
+
+    .faq-header {
+      max-width: 600px;
+      margin-bottom: 56px;
+    }
+
+    .faq-list {
+      max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 16px rgba(14, 27, 46, 0.07);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      text-align: left;
+      gap: 16px;
+      transition: color 0.2s ease;
+    }
+
+    .faq-question:hover {
+      color: var(--terracotta);
+    }
+
+    .faq-chevron {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: var(--text-mid);
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.open .faq-chevron {
+      background: var(--terracotta);
+      color: white;
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+      padding: 0 28px;
+      font-size: 0.925rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 28px 22px;
+    }
+
+    /* ===== CTA SECTION — matches index.html contact section ===== */
+    .cta-section {
+      background: var(--deep-navy);
+      padding: 100px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212, 168, 83, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-left .section-eyebrow {
+      color: var(--terracotta-light);
+    }
+
+    .cta-left .section-eyebrow::before {
+      background: var(--terracotta-light);
+    }
+
+    .cta-left .section-headline {
+      color: white;
+    }
+
+    .cta-left .section-headline em {
+      color: var(--gold);
+    }
+
+    .cta-body {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.55);
+      font-weight: 300;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    .cta-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cta-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .cta-feature-check {
+      width: 22px;
+      height: 22px;
+      background: rgba(90, 122, 96, 0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage-light);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .cta-right {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-form {
+      background: white;
+      border-radius: 24px;
+      padding: 40px 36px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--deep-navy);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .form-sub {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid rgba(14, 27, 46, 0.12);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: var(--cream);
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--terracotta);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(196, 98, 45, 0.1);
+    }
+
+    .form-textarea {
+      height: 80px;
+      resize: none;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--terracotta);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 8px;
+      letter-spacing: 0.01em;
+    }
+
+    .form-submit:hover {
+      background: #B3571F;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196, 98, 45, 0.3);
+    }
+
+    .form-disclaimer {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 12px;
+      font-weight: 300;
+    }
+
+    /* ===== FOOTER — matches index.html ===== */
+    footer {
+      background: #070F1A;
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .footer-logo span {
+      color: var(--terracotta);
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      nav {
+        padding: 16px 24px;
+      }
+
+      section {
+        padding: 72px 24px;
+      }
+
+      .hero {
+        padding: 110px 24px 64px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-card.featured {
+        transform: none;
+      }
+
+      .program-card.featured:hover {
+        transform: translateY(-6px);
+      }
+
+      .expect-section {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .cta-section {
+        grid-template-columns: 1fr;
+        padding: 72px 24px;
+        gap: 48px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 24px;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .pullquote-strip {
+        padding: 64px 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-headline {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =============================================
+     NAV
+     Update href on nav-logo to point back to index.html
+============================================= -->
+  <nav>
+    <a href="/index.html" class="nav-logo"><span>Vela </span>Speech Therapy</a>
+    <a href="#contact" class="nav-cta">Reserve a Spot</a>
+  </nav>
+
+
+  <!-- =============================================
+     HERO
+============================================= -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Summer 2025 · Columbus, Ohio · Limited Spots</div>
+      <h1 class="hero-headline">
+        Summer is the <em>best time</em><br>
+        to help your child find<br>
+        their voice.
+      </h1>
+      <p class="hero-sub">
+        No school schedules. No waitlists. No competing distractions.
+        Our summer speech programs give children dedicated time to grow — and give parents
+        real tools to keep that momentum going all year long.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-primary">Reserve a Spot</a>
+      </div>
+      <div class="hero-badge">Spots filling fast — enrollment closes June 1</div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     WHY SUMMER MATTERS
+============================================= -->
+  <section class="why-section">
+    <div class="section-eyebrow reveal">Why summer</div>
+    <h2 class="section-headline reveal">The most <em>overlooked</em> window<br>for speech progress.</h2>
+    <p class="why-intro reveal">
+      Summer isn't just a break — it's one of the most powerful opportunities for speech development.
+      Without school interruptions, children can build momentum faster than at any other time of year.
+    </p>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="why-icon">🗓️</span>
+        <div class="why-title">Consistent, uninterrupted sessions</div>
+        <div class="why-desc">No snow days, field trips, or early dismissals pulling your child out of their rhythm.
+          Summer allows the consistent weekly sessions that create lasting progress.</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🚀</span>
+        <div class="why-title">Arrive ready for the school year</div>
+        <div class="why-desc">Children who receive targeted support over the summer enter the fall more confident, more
+          communicative, and better prepared for classroom demands.</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🧠</span>
+        <div class="why-title">Reduced anxiety, better learning</div>
+        <div class="why-desc">Lower-pressure summer environments help children take risks with communication that they
+          wouldn't in the classroom. Play-based therapy thrives in this season.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     PROGRAM OPTIONS
+     TODO: Update program names, ages, pricing, and features
+     to reflect your actual summer offerings.
+============================================= -->
+  <section class="programs-section" id="programs">
+    <div class="programs-header reveal">
+      <div class="section-eyebrow">Summer programs</div>
+      <h2 class="section-headline">Find the right <em>fit.</em></h2>
+      <p>Every child's communication journey is different. Choose the program that matches where your child is — and
+        where you want them to go by September.</p>
+    </div>
+
+    <div class="programs-grid">
+
+      <!-- Program 1 -->
+      <div class="program-card reveal">
+        <div class="program-header">
+          <div class="program-tag">Early Communicators</div>
+          <div class="program-name">Little Voices</div>
+          <div class="program-ages">Ages 2–4 · Early Language Development</div>
+        </div>
+        <div class="program-body">
+          <p class="program-desc">
+            Play-based, parent-involved sessions designed to build early vocabulary,
+            social communication, and expressive language for toddlers and preschoolers.
+          </p>
+          <div class="program-features">
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              2 sessions per week, 45 min each
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              Parent coaching included every session
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              Home strategy guide provided
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              Progress report at end of summer
+            </div>
+          </div>
+          <a href="#contact" class="program-cta">Inquire About This Program</a>
+        </div>
+      </div>
+
+      <!-- Program 2 — Featured -->
+      <div class="program-card featured reveal">
+        <div class="featured-badge">Most Popular</div>
+        <div class="program-header">
+          <div class="program-tag">School-Age Focus</div>
+          <div class="program-name">Summer Strong</div>
+          <div class="program-ages">Ages 4–8 · Articulation & Fluency</div>
+        </div>
+        <div class="program-body">
+          <p class="program-desc">
+            Our signature summer program targeting articulation, phonological awareness,
+            and expressive language — so children arrive at school confident and ready to be heard.
+          </p>
+          <div class="program-features">
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              3 sessions per week, 50 min each
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              Individual + small group options
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              Bi-weekly parent progress updates
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              Kindergarten readiness screening
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              End-of-summer school transition plan
+            </div>
+          </div>
+          <a href="#contact" class="program-cta">Reserve a Spot</a>
+        </div>
+      </div>
+
+      <!-- Program 3 -->
+      <div class="program-card reveal">
+        <div class="program-header">
+          <div class="program-tag">Executive Function</div>
+          <div class="program-name">Think & Connect</div>
+          <div class="program-ages">Ages 7–12 · Language & Executive Function</div>
+        </div>
+        <div class="program-body">
+          <p class="program-desc">
+            For older children navigating language-based learning differences, social communication,
+            or executive function challenges — building skills that transfer into the classroom and beyond.
+          </p>
+          <div class="program-features">
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              2 sessions per week, 55 min each
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              Narrative language & social skills focus
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              School team collaboration available
+            </div>
+            <div class="program-feature">
+              <div class="program-feature-dot">✓</div>
+              Progress report at end of summer
+            </div>
+          </div>
+          <a href="#contact" class="program-cta">Inquire About This Program</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     WHAT TO EXPECT
+============================================= -->
+  <section class="expect-section" id="how-it-works">
+    <div class="expect-intro reveal">
+      <div class="section-eyebrow">What to expect</div>
+      <h2 class="section-headline">From first call to <em>first session.</em></h2>
+      <p>
+        Enrollment is simple. No long intake forms, no waitlists, no guessing.
+        A clear, personal process from the moment you reach out.
+      </p>
+      <p>
+        Summer spots are limited intentionally — so your child always gets
+        a dedicated therapist, not a crowded caseload.
+      </p>
+    </div>
+
+    <div class="expect-list reveal">
+      <div class="expect-item">
+        <div class="expect-num">1</div>
+        <div class="expect-text">
+          <strong>Free 15-Min Phone Call</strong>
+          <p>Tell us about your child and what you're hoping for this summer. We'll match you to the right program.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-num">2</div>
+        <div class="expect-text">
+          <strong>Play-Based Evaluation</strong>
+          <p>A thorough, child-friendly assessment to understand exactly where your child is and what they need most.
+          </p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-num">3</div>
+        <div class="expect-text">
+          <strong>Summer Plan Built Around Your Child</strong>
+          <p>A personalized therapy plan with measurable goals and home strategies so progress doesn't stop at the door.
+          </p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-num">4</div>
+        <div class="expect-text">
+          <strong>Regular Parent Updates</strong>
+          <p>You're involved every step of the way — not waiting in the lobby. You'll always know how it's going.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-num">5</div>
+        <div class="expect-text">
+          <strong>Back-to-School Ready</strong>
+          <p>A written transition summary with recommendations you can share with your child's school team in the fall.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     PULLQUOTE
+     TODO: Replace with a summer-specific parent quote if available.
+============================================= -->
+  <div class="pullquote-strip">
+    <div class="pullquote-inner">
+      <div class="pullquote-text">
+        "In 3 months she made more progress than in a full year at the school program.
+        I wish we had started a summer program sooner."
+      </div>
+      <div class="pullquote-source">— Columbus area parent</div>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+     FAQ
+     TODO: Add, remove, or update questions to match
+     your actual summer program policies.
+============================================= -->
+  <section class="faq-section">
+    <div class="faq-header reveal">
+      <div class="section-eyebrow">Common questions</div>
+      <h2 class="section-headline">Everything you <em>want to know.</em></h2>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          When does the summer program run?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          <!-- TODO: Update with your actual dates -->
+          Our summer programs run from June through August. Exact session scheduling
+          is flexible and arranged during your initial consultation to fit your family's summer calendar.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you accept insurance for summer programs?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          <!-- TODO: Update to reflect your actual insurance policy -->
+          We work with many insurance providers and can help you understand your
+          coverage before you commit. Contact us and we'll walk you through your options — no surprises.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          My child already receives school-based therapy. Can they still enroll?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          Absolutely. Many of our summer families supplement school-based services
+          with private therapy during the summer months — especially since school services
+          are paused over break. We're happy to collaborate with your child's school team.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How many spots are available?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          We intentionally limit summer enrollment so every child gets a dedicated therapist
+          and consistent scheduling. Spots are offered on a first-come basis after your
+          initial consultation. We recommend reaching out early — spots from prior families
+          are often reserved before June.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What if my child has never had speech therapy before?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          Summer is actually a wonderful time to start for the first time. Lower-pressure
+          schedules, play-based sessions, and consistent access to the same therapist
+          makes the transition into therapy much smoother — especially for children who
+          may be nervous about starting.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     CTA / CONTACT FORM
+     TODO: Wire up form submission to your backend or
+     form provider (e.g. Formspree, Netlify Forms, etc.)
+============================================= -->
+  <section class="cta-section" id="contact">
+    <div class="cta-left">
+      <div class="section-eyebrow">Reserve your spot</div>
+      <h2 class="section-headline">Summer fills up.<br><em>Don't wait.</em></h2>
+      <p class="cta-body">
+        A free 15-minute call is all it takes to find out if our summer program is the right fit.
+        No commitment, no pressure — just a real conversation about your child.
+      </p>
+      <div class="cta-features">
+        <div class="cta-feature">
+          <div class="cta-feature-check">✓</div>
+          Free 15-minute phone call — no commitment
+        </div>
+        <div class="cta-feature">
+          <div class="cta-feature-check">✓</div>
+          Limited spots — enrollment closes June 1
+        </div>
+        <div class="cta-feature">
+          <div class="cta-feature-check">✓</div>
+          Parent-involved sessions with home strategies
+        </div>
+        <div class="cta-feature">
+          <div class="cta-feature-check">✓</div>
+          Back-to-school transition plan included
+        </div>
+        <div class="cta-feature">
+          <div class="cta-feature-check">✓</div>
+          Serving Columbus, Hilliard, Dublin, Worthington & surrounding areas
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-right">
+      <div class="cta-form">
+        <div class="form-headline">Reserve Your Free Call</div>
+        <div class="form-sub">Takes 2 minutes. We'll reach out within 24 hours.</div>
+
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input class="form-input" type="text" placeholder="Sarah Johnson">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input class="form-input" type="tel" placeholder="(614) 555-0100">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Child's Age</label>
+          <select class="form-select">
+            <option value="">Select age range</option>
+            <option>Under 2 years</option>
+            <option>2–3 years</option>
+            <option>3–5 years</option>
+            <option>5–8 years</option>
+            <option>8+ years</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Which program are you interested in?</label>
+          <select class="form-select">
+            <option value="">Select a program</option>
+            <option>Little Voices (Ages 2–4)</option>
+            <option>Summer Strong (Ages 4–8)</option>
+            <option>Think & Connect (Ages 7–12)</option>
+            <option>Not sure — help me choose</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Anything you'd like us to know? (optional)</label>
+          <textarea class="form-textarea"
+            placeholder="e.g. He's been on the school waitlist, she starts kindergarten in the fall..."></textarea>
+        </div>
+        <button class="form-submit">Reserve My Free Call →</button>
+        <div class="form-disclaimer">No spam. No pressure. Just a conversation.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     FOOTER
+============================================= -->
+  <footer>
+    <div class="footer-logo"><span>Vela </span>Speech Therapy</div>
+    <div class="footer-text">Serving Columbus, Ohio and surrounding communities</div>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Insurance</a>
+      <a href="#contact">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+
+  <script>
+    // ===== SCROLL REVEAL =====
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+          let delay = 0;
+          siblings.forEach((sib, idx) => {
+            if (sib === entry.target) delay = idx * 80;
+          });
+          setTimeout(() => entry.target.classList.add('visible'), delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // ===== FORM SUBMIT =====
+    document.querySelector('.form-submit').addEventListener('click', function () {
+      const name = document.querySelector('input[type="text"]').value;
+      if (name) {
+        this.textContent = "✓ We'll be in touch soon!";
+        this.style.background = '#5A7A60';
+        this.style.transform = 'none';
+        this.style.boxShadow = 'none';
+      } else {
+        const nameInput = document.querySelector('input[type="text"]');
+        nameInput.focus();
+        nameInput.style.borderColor = '#C4622D';
+      }
+    });
+  </script>
+
+</body>
+
+</html>
