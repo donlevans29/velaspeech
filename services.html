@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech Therapy Services | Vela Speech Therapy | Columbus, Ohio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FAF7F2;
+      --warm-white: #FFFEF9;
+      --deep-navy: #0E1B2E;
+      --sage: #5A7A60;
+      --sage-light: #8FAF95;
+      --terracotta: #C4622D;
+      --terracotta-light: #E8A07A;
+      --gold: #D4A853;
+      --text-dark: #1A2332;
+      --text-mid: #4A5568;
+      --text-light: #8A9BB0;
+      --border: rgba(14, 27, 46, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--deep-navy);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--terracotta);
+    }
+
+    .nav-cta {
+      background: var(--terracotta);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--deep-navy);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(196, 98, 45, 0.3);
+    }
+
+    /* ===== SHARED ===== */
+    section {
+      padding: 100px 48px;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 18px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+
+    .section-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--deep-navy);
+      margin-bottom: 20px;
+    }
+
+    .section-headline em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(196, 98, 45, 0.25);
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(196, 98, 45, 0.35);
+      background: #B3571F;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 48px 80px;
+      background: var(--warm-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(90, 122, 96, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: -80px;
+      bottom: -80px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(196, 98, 45, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 780px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(90, 122, 96, 0.1);
+      border: 1px solid rgba(90, 122, 96, 0.25);
+      color: var(--sage);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--sage);
+      border-radius: 50%;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--deep-navy);
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s 0.15s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      max-width: 620px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.8s 0.3s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.45s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-tag {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      font-weight: 400;
+      box-shadow: 0 2px 8px rgba(14, 27, 46, 0.05);
+    }
+
+    .hero-tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .hero-tag.format {
+      border-color: rgba(90, 122, 96, 0.25);
+    }
+
+    .hero-tag.pay .hero-tag-dot {
+      background: var(--terracotta);
+    }
+
+    .hero-tag.pay {
+      border-color: rgba(196, 98, 45, 0.25);
+    }
+
+    /* ===== SERVICE FILTER STRIP ===== */
+    .filter-strip {
+      background: var(--deep-navy);
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 61px;
+      z-index: 90;
+    }
+
+    .filter-label {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 7px 16px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: white;
+    }
+
+    /* ===== SERVICES GRID ===== */
+    .services-section {
+      background: var(--cream);
+    }
+
+    .services-header {
+      max-width: 680px;
+      margin-bottom: 64px;
+    }
+
+    .services-header p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 22px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 24px rgba(14, 27, 46, 0.06);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sage), var(--terracotta));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 56px rgba(14, 27, 46, 0.11);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Featured / highlighted card */
+    .service-card.featured {
+      background: var(--deep-navy);
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .service-card.featured::before {
+      background: linear-gradient(90deg, var(--gold), var(--terracotta));
+    }
+
+    .service-card-left {}
+
+    .service-card-right {}
+
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .service-category {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sage);
+      background: rgba(90, 122, 96, 0.1);
+      border-radius: 50px;
+      padding: 3px 12px;
+      margin-bottom: 12px;
+    }
+
+    .service-card.featured .service-category {
+      color: var(--gold);
+      background: rgba(212, 168, 83, 0.15);
+    }
+
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--deep-navy);
+      margin-bottom: 12px;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .service-card.featured .service-name {
+      color: white;
+      font-size: 1.6rem;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+
+    .service-card.featured .service-desc {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .service-signs {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service-sign {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.84rem;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .service-sign-dot {
+      width: 18px;
+      height: 18px;
+      background: rgba(90, 122, 96, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage);
+      font-size: 0.6rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .service-card.featured .service-signs {
+      gap: 12px;
+    }
+
+    .service-card.featured .service-sign {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.9rem;
+    }
+
+    .service-card.featured .service-sign-dot {
+      background: rgba(212, 168, 83, 0.2);
+      color: var(--gold);
+      width: 20px;
+      height: 20px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--terracotta);
+      text-decoration: none;
+      margin-top: 22px;
+      transition: gap 0.2s ease;
+    }
+
+    .service-link:hover {
+      gap: 10px;
+    }
+
+    .service-link svg {
+      transition: transform 0.2s ease;
+    }
+
+    .service-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ===== FORMAT SECTION ===== */
+    .format-section {
+      background: var(--warm-white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: stretch;
+    }
+
+    .format-card {
+      background: white;
+      border-radius: 22px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(14, 27, 46, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .format-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(14, 27, 46, 0.1);
+    }
+
+    .format-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sage), var(--terracotta));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .format-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .format-icon {
+      font-size: 2.4rem;
+    }
+
+    .format-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--deep-navy);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .format-desc {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+      flex: 1;
+    }
+
+    .format-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .format-detail {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    .format-detail-check {
+      width: 20px;
+      height: 20px;
+      background: rgba(90, 122, 96, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage);
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== PRIVATE PAY ===== */
+    .pay-section {
+      background: var(--deep-navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pay-section::before {
+      content: '';
+      position: absolute;
+      right: -100px;
+      bottom: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212, 168, 83, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .pay-section .section-eyebrow {
+      color: var(--terracotta-light);
+    }
+
+    .pay-section .section-eyebrow::before {
+      background: var(--terracotta-light);
+    }
+
+    .pay-section .section-headline {
+      color: white;
+    }
+
+    .pay-section .section-headline em {
+      color: var(--gold);
+    }
+
+    .pay-intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    .pay-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .pay-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 28px 24px;
+      transition: all 0.3s ease;
+    }
+
+    .pay-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .pay-card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .pay-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .pay-card-desc {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 300;
+    }
+
+    .pay-note {
+      margin-top: 40px;
+      padding: 20px 24px;
+      background: rgba(212, 168, 83, 0.08);
+      border: 1px solid rgba(212, 168, 83, 0.2);
+      border-radius: 14px;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+      line-height: 1.65;
+      max-width: 680px;
+    }
+
+    .pay-note strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-section {
+      background: var(--cream);
+    }
+
+    .faq-header {
+      max-width: 600px;
+      margin-bottom: 56px;
+    }
+
+    .faq-list {
+      max-width: 780px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 16px rgba(14, 27, 46, 0.07);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      text-align: left;
+      gap: 16px;
+      transition: color 0.2s ease;
+    }
+
+    .faq-question:hover {
+      color: var(--terracotta);
+    }
+
+    .faq-chevron {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: var(--text-mid);
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.open .faq-chevron {
+      background: var(--terracotta);
+      color: white;
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+      padding: 0 28px;
+      font-size: 0.925rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 28px 22px;
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      background: var(--sage);
+      padding: 100px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 18px;
+    }
+
+    .cta-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .cta-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .cta-headline em {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .cta-sub {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.65);
+      font-weight: 300;
+      margin-bottom: 36px;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--sage);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      display: inline-block;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+      background: var(--deep-navy);
+      color: white;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #070F1A;
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .footer-logo span {
+      color: var(--terracotta);
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      nav {
+        padding: 16px 24px;
+      }
+
+      section {
+        padding: 72px 24px;
+      }
+
+      .hero {
+        padding: 110px 24px 64px;
+      }
+
+      .filter-strip {
+        padding: 16px 24px;
+        top: 57px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card.featured {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .format-section {
+        grid-template-columns: 1fr;
+      }
+
+      .pay-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-section {
+        padding: 72px 24px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 24px;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-headline {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/index.html" class="nav-logo"><span>Vela </span>Speech Therapy</a>
+    <a href="/index.html#contact" class="nav-cta">Free Phone Call</a>
+  </nav>
+
+
+  <!-- =============================================
+     HERO
+============================================= -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Columbus, Ohio · Bilingual · In-Person & Teletherapy</div>
+      <h1 class="hero-headline">
+        Therapy built around<br>
+        <em>your child.</em> Not a checklist.
+      </h1>
+      <p class="hero-sub">
+        Every child communicates differently. Every plan at Vela is built from scratch —
+        play-based, parent-involved, and designed around what your child specifically needs
+        to grow, connect, and be heard.
+      </p>
+      <div class="hero-tags">
+        <div class="hero-tag format">
+          <div class="hero-tag-dot"></div>
+          In-person sessions available
+        </div>
+        <div class="hero-tag format">
+          <div class="hero-tag-dot"></div>
+          Teletherapy available
+        </div>
+        <div class="hero-tag pay">
+          <div class="hero-tag-dot" style="background:var(--terracotta)"></div>
+          Private pay · Superbills provided
+        </div>
+        <div class="hero-tag">
+          <div class="hero-tag-dot" style="background:var(--gold)"></div>
+          Bilingual · English & Spanish
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     STICKY FILTER STRIP
+     JS below handles active state + smooth scroll
+============================================= -->
+  <div class="filter-strip" id="filter-strip">
+    <span class="filter-label">Jump to:</span>
+    <button class="filter-btn active" data-target="services-section">All Services</button>
+    <button class="filter-btn" data-target="early-language">Early Language</button>
+    <button class="filter-btn" data-target="articulation">Articulation</button>
+    <button class="filter-btn" data-target="executive-function">Executive Function</button>
+    <button class="filter-btn" data-target="social-communication">Social Communication</button>
+    <button class="filter-btn" data-target="fluency">Fluency</button>
+    <button class="filter-btn" data-target="aac">AAC</button>
+  </div>
+
+
+  <!-- =============================================
+     SERVICES GRID
+============================================= -->
+  <section class="services-section" id="services-section">
+    <div class="services-header reveal">
+      <div class="section-eyebrow">What we treat</div>
+      <h2 class="section-headline">Every service. <em>One child at a time.</em></h2>
+      <p>
+        Velia brings 15 years of clinical experience — across Los Angeles, South America,
+        and West Africa — to every session. Each service below is delivered one-on-one,
+        with a parent-involvement component and home strategies built in.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- FEATURED: Executive Function (Velia's core specialty) -->
+      <div class="service-card featured reveal" id="executive-function">
+        <div class="service-card-left">
+          <span class="service-icon">🧠</span>
+          <div class="service-category">Core Specialty</div>
+          <div class="service-name">Executive Function</div>
+          <p class="service-desc">
+            Executive function is the cognitive foundation for nearly everything a child does —
+            planning, attention, working memory, flexible thinking, and self-regulation.
+            When these skills are underdeveloped, it shows up in school performance,
+            emotional regulation, and the ability to organize and express thoughts clearly.
+            Velia's executive function specialty is one of the most sought-after services
+            at Vela and a core focus of the practice.
+          </p>
+        </div>
+        <div class="service-card-right">
+          <div class="service-signs">
+            <div class="service-sign">
+              <div class="service-sign-dot">✓</div>
+              Difficulty staying on task or following multi-step directions
+            </div>
+            <div class="service-sign">
+              <div class="service-sign-dot">✓</div>
+              Struggles to organize thoughts when speaking or writing
+            </div>
+            <div class="service-sign">
+              <div class="service-sign-dot">✓</div>
+              Emotional outbursts when routines change or tasks feel overwhelming
+            </div>
+            <div class="service-sign">
+              <div class="service-sign-dot">✓</div>
+              Difficulty with working memory — forgetting instructions mid-task
+            </div>
+            <div class="service-sign">
+              <div class="service-sign-dot">✓</div>
+              Challenges with academic language and classroom participation
+            </div>
+          </div>
+          <a href="/index.html#contact" class="service-link" style="color:var(--gold);margin-top:28px;">
+            Ask about this specialty
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Early Language Development -->
+      <div class="service-card reveal" id="early-language">
+        <span class="service-icon">🌱</span>
+        <div class="service-category">Early Childhood</div>
+        <div class="service-name">Early Language Development</div>
+        <p class="service-desc">
+          Play-based, parent-involved therapy for toddlers and preschoolers building
+          their first words, sentences, and the foundation for everything that comes next.
+          Parents are active participants — not waiting in the lobby.
+        </p>
+        <div class="service-signs">
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Limited vocabulary for their age
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Not yet combining words into short phrases
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Difficulty following simple instructions
+          </div>
+        </div>
+        <a href="/index.html#contact" class="service-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Articulation & Phonology -->
+      <div class="service-card reveal" id="articulation">
+        <span class="service-icon">🗣️</span>
+        <div class="service-category">Speech Clarity</div>
+        <div class="service-name">Articulation & Phonology</div>
+        <p class="service-desc">
+          Helping children produce sounds clearly so they can be understood — by
+          strangers, teachers, and friends, not just the people who love them most.
+          Includes both single sound errors and broader phonological pattern differences.
+        </p>
+        <div class="service-signs">
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Hard to understand outside the family
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Substituting, omitting, or distorting sounds
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Peers or teachers commenting on speech clarity
+          </div>
+        </div>
+        <a href="/index.html#contact" class="service-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Childhood Apraxia of Speech -->
+      <div class="service-card reveal" id="cas">
+        <span class="service-icon">✨</span>
+        <div class="service-category">Motor Speech</div>
+        <div class="service-name">Childhood Apraxia of Speech</div>
+        <p class="service-desc">
+          One of the most misunderstood and misdiagnosed speech disorders. CAS is a motor
+          speech disorder — the brain has difficulty coordinating the movements needed for
+          speech. It requires intensive, specialized treatment from a clinician who knows it.
+        </p>
+        <div class="service-signs">
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Inconsistent sound errors — different each time
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Longer words are noticeably harder than short ones
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Limited progress with previous speech therapy
+          </div>
+        </div>
+        <a href="/index.html#contact" class="service-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Social Communication -->
+      <div class="service-card reveal" id="social-communication">
+        <span class="service-icon">🤝</span>
+        <div class="service-category">Connection & Belonging</div>
+        <div class="service-name">Social Communication</div>
+        <p class="service-desc">
+          For children who understand language but struggle with the unwritten rules —
+          taking turns in conversation, reading social cues, making and keeping friends.
+          Often a fit for children with autism spectrum differences or pragmatic language challenges.
+        </p>
+        <div class="service-signs">
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Difficulty joining or maintaining conversations
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Struggles with friendship or peer relationships
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Misreads social cues or tone of voice
+          </div>
+        </div>
+        <a href="/index.html#contact" class="service-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Language-Based Learning -->
+      <div class="service-card reveal" id="language-learning">
+        <span class="service-icon">📚</span>
+        <div class="service-category">Academic Language</div>
+        <div class="service-name">Language-Based Learning</div>
+        <p class="service-desc">
+          When a child's reading, writing, or classroom performance is affected by
+          underlying language processing differences, speech therapy can be the missing piece.
+          Velia works closely with school teams and parents to bridge the gap.
+        </p>
+        <div class="service-signs">
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Struggles with reading comprehension or decoding
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Difficulty expressing ideas in writing
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Trouble processing or following classroom instruction
+          </div>
+        </div>
+        <a href="/index.html#contact" class="service-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Fluency -->
+      <div class="service-card reveal" id="fluency">
+        <span class="service-icon">🌊</span>
+        <div class="service-category">Fluency</div>
+        <div class="service-name">Fluency & Stuttering</div>
+        <p class="service-desc">
+          Stuttering is more than a speech pattern — it affects confidence, social comfort,
+          and how a child sees themselves as a communicator. Therapy focuses on both
+          fluency techniques and building the confidence to speak in any situation.
+        </p>
+        <div class="service-signs">
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Repetitions, prolongations, or blocks when speaking
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Avoids speaking up in class or social situations
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Visible tension or frustration during speech
+          </div>
+        </div>
+        <a href="/index.html#contact" class="service-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- AAC -->
+      <div class="service-card reveal" id="aac">
+        <span class="service-icon">💡</span>
+        <div class="service-category">Alternative Communication</div>
+        <div class="service-name">AAC — Augmentative & Alternative Communication</div>
+        <p class="service-desc">
+          AAC supports children who are still building verbal communication — through
+          picture boards, speech-generating devices, or apps. Every child deserves
+          a way to be heard. AAC is not a last resort; it is a voice.
+        </p>
+        <div class="service-signs">
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Limited or no verbal speech
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Frustration or behavioral signs from communication barriers
+          </div>
+          <div class="service-sign">
+            <div class="service-sign-dot">✓</div>
+            Exploring alternatives to or alongside verbal speech
+          </div>
+        </div>
+        <a href="/index.html#contact" class="service-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     SESSION FORMATS
+============================================= -->
+  <section class="format-section">
+    <div class="format-card reveal">
+      <div class="format-icon">🏢</div>
+      <div class="format-name">In-Person Sessions</div>
+      <p class="format-desc">
+        Face-to-face therapy at our Columbus location. In-person sessions are ideal for
+        younger children, hands-on activities, and families who prefer a dedicated
+        therapy environment outside the home.
+      </p>
+      <div class="format-details">
+        <div class="format-detail">
+          <div class="format-detail-check">✓</div>
+          Columbus area — serving Hilliard, Dublin, Worthington & Westerville
+        </div>
+        <div class="format-detail">
+          <div class="format-detail-check">✓</div>
+          Play-based environment with therapy-specific materials
+        </div>
+        <div class="format-detail">
+          <div class="format-detail-check">✓</div>
+          Parent observation and coaching built into every session
+        </div>
+        <div class="format-detail">
+          <!-- TODO: Add actual address once confirmed -->
+          <div class="format-detail-check">✓</div>
+          <span>Columbus, OH · <em style="color:var(--text-light)">Address shared upon booking</em></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="format-card reveal">
+      <div class="format-icon">💻</div>
+      <div class="format-name">Teletherapy Sessions</div>
+      <p class="format-desc">
+        Fully effective, live one-on-one therapy delivered via secure video.
+        Teletherapy makes it possible to work with Velia regardless of location,
+        schedule, or mobility — without sacrificing quality or connection.
+      </p>
+      <div class="format-details">
+        <div class="format-detail">
+          <div class="format-detail-check">✓</div>
+          Available to families across Ohio
+        </div>
+        <div class="format-detail">
+          <div class="format-detail-check">✓</div>
+          Secure, HIPAA-compliant video platform
+        </div>
+        <div class="format-detail">
+          <div class="format-detail-check">✓</div>
+          Same parent-involvement and home strategy approach
+        </div>
+        <div class="format-detail">
+          <div class="format-detail-check">✓</div>
+          All you need is a device and a quiet space
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     PRIVATE PAY
+============================================= -->
+  <section class="pay-section">
+    <div class="section-eyebrow reveal">Fees & payment</div>
+    <h2 class="section-headline reveal">Private pay —<br><em>transparent & straightforward.</em></h2>
+    <p class="pay-intro reveal">
+      Vela is a private pay practice. This means no insurance gatekeeping, no pre-authorization
+      delays, and no limits on the therapy your child actually needs. You get the full
+      picture upfront — no surprises.
+    </p>
+
+    <div class="pay-grid">
+      <div class="pay-card reveal">
+        <span class="pay-card-icon">🧾</span>
+        <div class="pay-card-title">Superbills Provided</div>
+        <div class="pay-card-desc">
+          We provide detailed superbills after each session so you can submit
+          to your insurance for potential out-of-network reimbursement.
+          Many families recover a significant portion of costs this way.
+        </div>
+      </div>
+      <div class="pay-card reveal">
+        <span class="pay-card-icon">💳</span>
+        <div class="pay-card-title">HSA & FSA Accepted</div>
+        <div class="pay-card-desc">
+          Speech therapy is an eligible expense for Health Savings Accounts
+          and Flexible Spending Accounts. Your HSA/FSA card works directly
+          at the time of payment.
+        </div>
+      </div>
+      <div class="pay-card reveal">
+        <span class="pay-card-icon">📞</span>
+        <div class="pay-card-title">Fees Discussed on Your Call</div>
+        <div class="pay-card-desc">
+          <!-- TODO: Add specific session rates here when ready to publish -->
+          Session rates are shared transparently during your free 15-minute
+          phone call. No obligation, no surprise invoices — just a clear
+          conversation before you commit to anything.
+        </div>
+      </div>
+    </div>
+
+    <div class="pay-note reveal">
+      <strong>Not sure about out-of-network benefits?</strong> Ask your insurance provider:
+      "Do I have out-of-network speech therapy benefits?" and "What is my out-of-network deductible?"
+      Many families are surprised by what their plan covers once they ask the right questions.
+      Velia is happy to walk you through this on your free call.
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     FAQ
+============================================= -->
+  <section class="faq-section">
+    <div class="faq-header reveal">
+      <div class="section-eyebrow">Common questions</div>
+      <h2 class="section-headline">Before you <em>reach out.</em></h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          How do I know which service my child needs?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          You don't need to know — that's what the evaluation is for. The free 15-minute
+          phone call helps Velia understand what you're seeing, and a play-based evaluation
+          identifies exactly what your child needs. Many children present with overlapping
+          areas, and Velia will give you a clear picture after the assessment.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How long are sessions and how often does my child need to come?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          Sessions are typically 45–55 minutes. Frequency depends on your child's
+          needs and goals — most children are seen 1–2 times per week. Velia will
+          give you a specific recommendation as part of the evaluation and planning process.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Is teletherapy as effective as in-person?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          For most speech and language goals, research supports teletherapy as equally
+          effective to in-person treatment. It works particularly well for school-age
+          children and for families with scheduling or transportation constraints.
+          Velia will discuss which format is the best fit for your child during your call.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          My child already gets speech at school. Do they still need private therapy?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          School-based therapy is valuable but often limited — group sessions, frequent
+          therapist changes, and eligibility criteria that don't always reflect a child's
+          full needs. Private therapy complements school services and can accelerate
+          progress significantly. Velia is happy to collaborate with your child's school team.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you offer services in Spanish?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          Yes. Velia is a fully bilingual clinician — not just conversationally, but
+          clinically. She can assess, diagnose, and deliver therapy entirely in Spanish,
+          and understands the unique considerations for bilingual children. No interpreter
+          needed, and no nuance lost in translation.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What ages do you work with?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          <!-- TODO: Confirm and update age range served -->
+          Vela serves children from toddlers through early adolescence. The free phone
+          call is the best way to confirm whether your child's age and needs are a good
+          fit for the practice.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     CTA
+============================================= -->
+  <section class="cta-section">
+    <div class="cta-inner reveal">
+      <div class="cta-eyebrow">Ready to start</div>
+      <h2 class="cta-headline">Not sure where to begin?<br><em>That's what the call is for.</em></h2>
+      <p class="cta-sub">
+        A free 15-minute phone call with Velia — no forms, no commitment.
+        Just a real conversation about your child and what they need.
+      </p>
+      <a href="/index.html#contact" class="btn-white">Schedule a Free Call</a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><span>Vela </span>Speech Therapy</div>
+    <div class="footer-text">Serving Columbus, Ohio and surrounding communities</div>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/summer-programs.html">Summer Programs</a>
+      <a href="/index.html#contact">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+
+  <script>
+    // ===== SCROLL REVEAL =====
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+          let delay = 0;
+          siblings.forEach((sib, idx) => {
+            if (sib === entry.target) delay = idx * 80;
+          });
+          setTimeout(() => entry.target.classList.add('visible'), delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // ===== FILTER STRIP — smooth scroll + active state =====
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const targetId = btn.dataset.target;
+        const target = document.getElementById(targetId);
+        if (target) {
+          const offset = 120; // nav + filter strip height
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
