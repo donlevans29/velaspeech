@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Vela Speech Therapy | Columbus, Ohio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FAF7F2;
+      --warm-white: #FFFEF9;
+      --deep-navy: #0E1B2E;
+      --sage: #5A7A60;
+      --sage-light: #8FAF95;
+      --terracotta: #C4622D;
+      --terracotta-light: #E8A07A;
+      --gold: #D4A853;
+      --text-dark: #1A2332;
+      --text-mid: #4A5568;
+      --text-light: #8A9BB0;
+      --border: rgba(14, 27, 46, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--deep-navy);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--terracotta);
+    }
+
+    .nav-cta {
+      background: var(--terracotta);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--deep-navy);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(196, 98, 45, 0.3);
+    }
+
+    /* ===== PAGE LAYOUT ===== */
+    .page-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 140px 48px 100px;
+    }
+
+    /* ===== HEADER ===== */
+    .page-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 18px;
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+
+    .page-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--deep-navy);
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 300;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ===== HIPAA NOTICE BANNER ===== */
+    .hipaa-banner {
+      background: rgba(90, 122, 96, 0.08);
+      border: 1px solid rgba(90, 122, 96, 0.25);
+      border-left: 4px solid var(--sage);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 48px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .hipaa-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .hipaa-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--sage);
+      margin-bottom: 4px;
+    }
+
+    .hipaa-text p {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    /* ===== TOC ===== */
+    .toc {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(14, 27, 46, 0.05);
+    }
+
+    .toc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--deep-navy);
+      margin-bottom: 16px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      columns: 2;
+    }
+
+    .toc-list li a {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toc-list li a::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--terracotta);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .toc-list li a:hover {
+      color: var(--terracotta);
+    }
+
+    /* ===== POLICY CONTENT ===== */
+    .policy-section {
+      margin-bottom: 52px;
+      scroll-margin-top: 100px;
+    }
+
+    .policy-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--deep-navy);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-section p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+
+    .policy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .policy-section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.925rem;
+      line-height: 1.65;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .policy-section ul li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--terracotta);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .policy-section a {
+      color: var(--terracotta);
+      text-decoration: none;
+      font-weight: 400;
+      transition: opacity 0.2s ease;
+    }
+
+    .policy-section a:hover {
+      opacity: 0.75;
+    }
+
+    .policy-highlight {
+      background: rgba(196, 98, 45, 0.05);
+      border-left: 3px solid var(--terracotta);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .policy-highlight strong {
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    /* ===== CONTACT CARD ===== */
+    .contact-card {
+      background: var(--deep-navy);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-top: 56px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .contact-card-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.55);
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      color: var(--terracotta-light);
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-card a:hover {
+      color: white;
+    }
+
+    /* ===== LEGAL DISCLAIMER ===== */
+    .legal-note {
+      margin-top: 48px;
+      padding: 20px 24px;
+      background: rgba(14, 27, 46, 0.04);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #070F1A;
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .footer-logo span {
+      color: var(--terracotta);
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      nav {
+        padding: 16px 24px;
+      }
+
+      .page-wrapper {
+        padding: 110px 24px 72px;
+      }
+
+      .toc-list {
+        columns: 1;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 24px;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/index.html" class="nav-logo"><span>Vela </span>Speech Therapy</a>
+    <a href="/index.html#contact" class="nav-cta">Free Phone Call</a>
+  </nav>
+
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <div class="page-eyebrow">Legal</div>
+    <h1 class="page-headline">Privacy Policy</h1>
+    <p class="page-meta">
+      Vela Speech Therapy · Columbus, Ohio ·
+      <!-- TODO: Update this date whenever the policy is revised -->
+      Last updated: June 1, 2025
+    </p>
+
+    <!-- HIPAA NOTICE -->
+    <div class="hipaa-banner">
+      <div class="hipaa-icon">🔒</div>
+      <div class="hipaa-text">
+        <strong>HIPAA Notice</strong>
+        <p>
+          Vela Speech Therapy is a covered entity under the Health Insurance Portability
+          and Accountability Act (HIPAA). Your protected health information (PHI) is
+          handled in accordance with HIPAA regulations and our Notice of Privacy Practices,
+          which is provided to clients at the start of services.
+        </p>
+      </div>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+      <div class="toc-title">In this policy</div>
+      <ul class="toc-list">
+        <li><a href="#information-collected">Information We Collect</a></li>
+        <li><a href="#how-we-use">How We Use It</a></li>
+        <li><a href="#hipaa">HIPAA & Health Information</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#sharing">Information Sharing</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#cookies">Cookies & Tracking</a></li>
+        <li><a href="#security">Data Security</a></li>
+        <li><a href="#your-rights">Your Rights</a></li>
+        <li><a href="#contact-privacy">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- INTRO -->
+    <div class="policy-section">
+      <p>
+        Vela Speech Therapy ("we," "us," or "our") operates the website
+        <strong>velaspeechtherapy.com</strong> and provides private speech-language
+        pathology services in Columbus, Ohio. This Privacy Policy explains how we
+        collect, use, and protect information when you visit our website or contact
+        us about our services.
+      </p>
+      <p>
+        By using this website, you agree to the practices described in this policy.
+        If you have questions, please contact us directly — we are always happy to explain.
+      </p>
+    </div>
+
+    <!-- 1. INFORMATION COLLECTED -->
+    <div class="policy-section" id="information-collected">
+      <div class="policy-section-title">1. Information We Collect</div>
+      <p>We collect information in two ways — information you give us directly, and basic information collected
+        automatically when you visit our website.</p>
+
+      <p><strong style="color:var(--text-dark);font-weight:500;">Information you provide directly:</strong></p>
+      <ul>
+        <li>Your name and phone number when you submit a contact form</li>
+        <li>Your child's age range and any details you share in the optional message field</li>
+        <li>Any information shared during a phone consultation or email exchange</li>
+      </ul>
+
+      <p><strong style="color:var(--text-dark);font-weight:500;">Information collected automatically:</strong></p>
+      <ul>
+        <li>Basic website usage data such as pages visited and time spent on the site</li>
+        <li>Device type, browser type, and approximate location (city/region level)</li>
+        <li>Referring website or search term that brought you to our site</li>
+      </ul>
+
+      <p>We do not collect payment information directly. Any payments are processed through secure third-party
+        platforms.</p>
+    </div>
+
+    <!-- 2. HOW WE USE IT -->
+    <div class="policy-section" id="how-we-use">
+      <div class="policy-section-title">2. How We Use Your Information</div>
+      <p>We use the information you provide solely to:</p>
+      <ul>
+        <li>Respond to your inquiry and schedule your free consultation</li>
+        <li>Communicate with you about services, scheduling, and your child's care</li>
+        <li>Improve the website experience and content based on anonymous usage data</li>
+      </ul>
+      <div class="policy-highlight">
+        <strong>We do not sell your information.</strong> We do not sell, rent, trade,
+        or share your personal information with third parties for marketing purposes.
+        Ever.
+      </div>
+    </div>
+
+    <!-- 3. HIPAA -->
+    <div class="policy-section" id="hipaa">
+      <div class="policy-section-title">3. HIPAA & Protected Health Information</div>
+      <p>
+        Once you become a client of Vela Speech Therapy, your protected health information
+        (PHI) — including clinical notes, evaluation results, and treatment records — is
+        governed by HIPAA and our separate Notice of Privacy Practices (NPP).
+      </p>
+      <p>
+        This website's privacy policy covers <em>website interactions and pre-service
+          contact only</em>. Your clinical records and health information are handled
+        under HIPAA-compliant practices and stored in a secure, HIPAA-compliant
+        electronic health record system.
+      </p>
+      <p>
+        You will receive and sign a copy of our full Notice of Privacy Practices
+        at the start of services. Please contact us if you would like a copy in advance.
+      </p>
+    </div>
+
+    <!-- 4. CHILDREN'S PRIVACY -->
+    <div class="policy-section" id="children">
+      <div class="policy-section-title">4. Children's Privacy</div>
+      <p>
+        Our services are provided to children, but this website is directed at parents
+        and caregivers — not children directly. We do not knowingly collect personal
+        information directly from children under 13.
+      </p>
+      <p>
+        When you submit a contact form, you are sharing information as a parent or
+        guardian on behalf of your child. We treat all information about minors with
+        the highest level of care and confidentiality.
+      </p>
+      <p>
+        If you believe a child has submitted personal information to this website
+        without parental consent, please contact us immediately and we will remove it.
+      </p>
+    </div>
+
+    <!-- 5. SHARING -->
+    <div class="policy-section" id="sharing">
+      <div class="policy-section-title">5. Information Sharing</div>
+      <p>We do not share your personal information except in the following limited circumstances:</p>
+      <ul>
+        <li>
+          <strong style="color:var(--text-dark);font-weight:500;">With your consent</strong> —
+          for example, if you ask us to coordinate with your child's school or pediatrician
+        </li>
+        <li>
+          <strong style="color:var(--text-dark);font-weight:500;">As required by law</strong> —
+          including mandatory reporting obligations and valid legal processes
+        </li>
+        <li>
+          <strong style="color:var(--text-dark);font-weight:500;">Service providers</strong> —
+          with trusted vendors who help us operate our website and business
+          (see Third-Party Services below), under strict confidentiality terms
+        </li>
+      </ul>
+    </div>
+
+    <!-- 6. THIRD-PARTY SERVICES -->
+    <div class="policy-section" id="third-party">
+      <div class="policy-section-title">6. Third-Party Services</div>
+      <p>We use a small number of third-party services to operate this website. These services may collect limited data
+        as described below:</p>
+
+      <p><strong style="color:var(--text-dark);font-weight:500;">Netlify</strong><br>
+        Our website is hosted on Netlify. Contact form submissions are processed through
+        Netlify Forms. Netlify may store form submission data on their servers.
+        See <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Netlify's Privacy Policy</a>.</p>
+
+      <p><strong style="color:var(--text-dark);font-weight:500;">Google Fonts</strong><br>
+        We use Google Fonts to display typography on this site. Google may log font
+        requests, which can include your IP address.
+        See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+      </p>
+
+      <!-- TODO: Add or remove services as your tech stack evolves
+         Common additions: Google Analytics, scheduling tools (Calendly, Jane App),
+         payment processors (Square, Stripe), telehealth platforms (SimplePractice, Zoom)
+    -->
+
+      <p>We do not use advertising networks, behavioral tracking tools, or social media
+        pixels on this website.</p>
+    </div>
+
+    <!-- 7. COOKIES -->
+    <div class="policy-section" id="cookies">
+      <div class="policy-section-title">7. Cookies & Tracking</div>
+      <p>
+        This website uses minimal cookies — small files stored in your browser that
+        help the site function. We do not use cookies for advertising or cross-site tracking.
+      </p>
+      <ul>
+        <li>Essential cookies that allow the website to function properly</li>
+        <li>Basic analytics to understand how visitors use the site (page views, device type)</li>
+      </ul>
+      <p>
+        You can disable cookies in your browser settings at any time. This may affect
+        how some parts of the site function but will not prevent you from accessing content.
+      </p>
+    </div>
+
+    <!-- 8. SECURITY -->
+    <div class="policy-section" id="security">
+      <div class="policy-section-title">8. Data Security</div>
+      <p>
+        We take reasonable steps to protect the information you share with us.
+        Our website is served over HTTPS (encrypted connection), and we use
+        reputable, security-conscious service providers.
+      </p>
+      <p>
+        Clinical health records are stored in a HIPAA-compliant electronic health
+        record system with access controls, encryption, and audit logging.
+      </p>
+      <p>
+        No method of transmission over the internet is 100% secure. If you have
+        concerns about the security of specific information, please contact us
+        to discuss the best way to share it.
+      </p>
+    </div>
+
+    <!-- 9. YOUR RIGHTS -->
+    <div class="policy-section" id="your-rights">
+      <div class="policy-section-title">9. Your Rights</div>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Request access to the personal information we hold about you</li>
+        <li>Ask us to correct or update inaccurate information</li>
+        <li>Ask us to delete your information, subject to any legal or HIPAA obligations</li>
+        <li>Withdraw consent for communications at any time</li>
+      </ul>
+      <p>
+        If you are a current or former client, additional rights regarding your
+        protected health information are described in our Notice of Privacy Practices.
+      </p>
+      <p>To exercise any of these rights, please contact us using the information below.</p>
+    </div>
+
+    <!-- 10. CHANGES -->
+    <div class="policy-section">
+      <div class="policy-section-title">10. Changes to This Policy</div>
+      <p>
+        We may update this Privacy Policy from time to time. When we do, we will
+        update the "Last updated" date at the top of this page. We encourage you
+        to review this page periodically.
+      </p>
+      <p>
+        Continued use of this website after changes are posted constitutes your
+        acceptance of the updated policy.
+      </p>
+    </div>
+
+    <!-- CONTACT CARD -->
+    <div class="contact-card" id="contact-privacy">
+      <div class="contact-card-icon">✉️</div>
+      <div>
+        <div class="contact-card-title">Privacy questions? Contact us directly.</div>
+        <p>
+          If you have questions about this Privacy Policy, want to exercise your
+          rights, or have a concern about how your information is handled —
+          please reach out. We take privacy seriously and will respond promptly.
+        </p>
+        <!-- TODO: Replace with actual contact email and phone -->
+        <a href="mailto:hello@velaspeechtherapy.com">hello@velaspeechtherapy.com</a><br><br>
+        <a href="/index.html#contact">Or use our contact form →</a>
+      </div>
+    </div>
+
+    <!-- LEGAL DISCLAIMER -->
+    <div class="legal-note">
+      <!-- TODO: Have this policy reviewed by a licensed attorney before publishing,
+         particularly given HIPAA obligations as a healthcare provider.
+         This template is provided as a starting point only and does not constitute
+         legal advice. -->
+      This Privacy Policy is a general template provided as a starting point.
+      Vela Speech Therapy recommends having this document reviewed by a licensed
+      attorney familiar with HIPAA and Ohio healthcare privacy requirements
+      before publishing.
+    </div>
+
+  </div><!-- end page-wrapper -->
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><span>Vela </span>Speech Therapy</div>
+    <div class="footer-text">Serving Columbus, Ohio and surrounding communities</div>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/summer-programs.html">Summer Programs</a>
+      <a href="/index.html#contact">Contact</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
