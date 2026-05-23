@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Velia Gonzalez | Vela Speech Therapy | Columbus, Ohio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FAF7F2;
+      --warm-white: #FFFEF9;
+      --deep-navy: #0E1B2E;
+      --sage: #5A7A60;
+      --sage-light: #8FAF95;
+      --terracotta: #C4622D;
+      --terracotta-light: #E8A07A;
+      --gold: #D4A853;
+      --text-dark: #1A2332;
+      --text-mid: #4A5568;
+      --text-light: #8A9BB0;
+      --border: rgba(14, 27, 46, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--deep-navy);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--terracotta);
+    }
+
+    .nav-cta {
+      background: var(--terracotta);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--deep-navy);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(196, 98, 45, 0.3);
+    }
+
+    /* ===== SHARED ===== */
+    section {
+      padding: 100px 48px;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 18px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+
+    .section-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--deep-navy);
+      margin-bottom: 20px;
+    }
+
+    .section-headline em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(196, 98, 45, 0.25);
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(196, 98, 45, 0.35);
+      background: #B3571F;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 140px 48px 100px;
+      gap: 80px;
+      background: var(--warm-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(90, 122, 96, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: -80px;
+      bottom: -80px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(196, 98, 45, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(90, 122, 96, 0.1);
+      border: 1px solid rgba(90, 122, 96, 0.25);
+      color: var(--sage);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--sage);
+      border-radius: 50%;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--deep-navy);
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s 0.15s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      max-width: 480px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.8s 0.3s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.45s ease forwards;
+      opacity: 0;
+    }
+
+    /* ===== PHOTO CARD ===== */
+    .hero-right {
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.8s 0.3s ease forwards;
+      opacity: 0;
+    }
+
+    .photo-card {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--cream);
+      box-shadow: 0 24px 80px rgba(14, 27, 46, 0.14);
+      aspect-ratio: 4/5;
+      max-width: 420px;
+      margin-left: auto;
+    }
+
+    /* =============================================
+     PHOTO PLACEHOLDER
+     TODO: Replace this entire .photo-placeholder
+     block with an <img> tag once you have a photo:
+     <img src="/images/velia-gonzalez.jpg"
+          alt="Velia Gonzalez, MS CCC-SLP"
+          style="width:100%;height:100%;object-fit:cover;">
+  ============================================= */
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: linear-gradient(145deg, rgba(90, 122, 96, 0.08) 0%, rgba(196, 98, 45, 0.06) 100%);
+      min-height: 480px;
+    }
+
+    .photo-placeholder-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: rgba(90, 122, 96, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+    }
+
+    .photo-placeholder-text {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .photo-card-badge {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      background: white;
+      border-radius: 16px;
+      padding: 18px 22px;
+      box-shadow: 0 8px 32px rgba(14, 27, 46, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .badge-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: white;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .badge-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--deep-navy);
+      line-height: 1.2;
+    }
+
+    .badge-title {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* ===== CREDENTIAL STRIP ===== */
+    .credential-strip {
+      background: var(--deep-navy);
+      padding: 36px 48px;
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .credential-item {
+      text-align: center;
+    }
+
+    .credential-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--terracotta-light);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .credential-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    /* ===== STORY SECTION ===== */
+    .story-section {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .story-left p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .story-left p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-pull {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--deep-navy);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      border-left: 3px solid var(--terracotta);
+      padding-left: 24px;
+      margin: 32px 0;
+    }
+
+    /* Journey timeline on the right */
+    .story-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .journey-item {
+      display: flex;
+      gap: 24px;
+      position: relative;
+      padding-bottom: 36px;
+    }
+
+    .journey-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .journey-item:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      bottom: 0;
+      width: 1px;
+      background: repeating-linear-gradient(180deg,
+          var(--border) 0,
+          var(--border) 6px,
+          transparent 6px,
+          transparent 12px);
+    }
+
+    .journey-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(196, 98, 45, 0.15);
+      margin-top: 2px;
+    }
+
+    .journey-content {}
+
+    .journey-place {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+
+    .journey-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--deep-navy);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .journey-desc {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    /* ===== PHILOSOPHY ===== */
+    .philosophy-section {
+      background: var(--sage);
+      padding: 80px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .philosophy-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .philosophy-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      color: rgba(255, 255, 255, 0.15);
+      line-height: 0.7;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .philosophy-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .philosophy-source {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ===== SPECIALIZATIONS ===== */
+    .spec-section {
+      background: var(--warm-white);
+    }
+
+    .spec-header {
+      max-width: 600px;
+      margin-bottom: 64px;
+    }
+
+    .spec-header p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .spec-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 24px rgba(14, 27, 46, 0.06);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .spec-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sage), var(--terracotta));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .spec-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(14, 27, 46, 0.1);
+    }
+
+    .spec-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .spec-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .spec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--deep-navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .spec-desc {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    /* ===== LANGUAGES ===== */
+    .language-section {
+      background: var(--deep-navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .language-section::after {
+      content: '';
+      position: absolute;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(90, 122, 96, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .language-section .section-eyebrow {
+      color: var(--terracotta-light);
+    }
+
+    .language-section .section-eyebrow::before {
+      background: var(--terracotta-light);
+    }
+
+    .language-section .section-headline {
+      color: white;
+    }
+
+    .language-section .section-headline em {
+      color: var(--terracotta-light);
+    }
+
+    .language-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+      max-width: 620px;
+      margin-bottom: 48px;
+    }
+
+    .language-tags {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .language-tag {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50px;
+      padding: 12px 22px;
+      font-size: 0.95rem;
+      color: white;
+      font-weight: 400;
+      transition: all 0.2s ease;
+    }
+
+    .language-tag:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .language-tag-flag {
+      font-size: 1.2rem;
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      background: var(--cream);
+      text-align: center;
+      padding: 100px 48px;
+    }
+
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-inner .section-headline {
+      margin-bottom: 16px;
+    }
+
+    .cta-inner p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 36px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #070F1A;
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .footer-logo span {
+      color: var(--terracotta);
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      nav {
+        padding: 16px 24px;
+      }
+
+      section {
+        padding: 72px 24px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 110px 24px 64px;
+        gap: 48px;
+      }
+
+      .hero-right {
+        max-width: 380px;
+      }
+
+      .photo-card {
+        margin: 0 auto;
+      }
+
+      .credential-strip {
+        gap: 40px;
+        padding: 36px 24px;
+      }
+
+      .story-section {
+        grid-template-columns: 1fr;
+        gap: 56px;
+      }
+
+      .spec-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 24px;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-headline {
+        font-size: 2.4rem;
+      }
+
+      .philosophy-quote {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/index.html" class="nav-logo"><span>Vela </span>Speech Therapy</a>
+    <a href="/index.html#contact" class="nav-cta">Free Phone Call</a>
+  </nav>
+
+
+  <!-- =============================================
+     HERO
+============================================= -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Meet your therapist</div>
+      <h1 class="hero-headline">
+        Hi, I'm Velia.<br>
+        I believe <em>every child</em><br>
+        has a voice.
+      </h1>
+      <p class="hero-sub">
+        For over 15 years I've worked alongside children and families across Los Angeles,
+        South America, and West Africa — learning that the desire to be heard is universal,
+        and that the right support can unlock it in every child.
+      </p>
+      <div class="hero-cta-group">
+        <a href="/index.html#contact" class="btn-primary">Schedule a Free Call</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-card">
+        <!-- =============================================
+           TODO: Replace .photo-placeholder with:
+           <img src="/images/velia-gonzalez.jpg"
+                alt="Velia Gonzalez, MS CCC-SLP — Vela Speech Therapy"
+                style="width:100%;height:100%;object-fit:cover;display:block;">
+      ============================================= -->
+        <div class="photo-placeholder">
+          <div class="photo-placeholder-icon">👩🏽‍⚕️</div>
+          <div class="photo-placeholder-text">
+            Photo of Velia Gonzalez<br>MS, CCC-SLP<br>
+            <span style="color:var(--terracotta);font-size:0.7rem;">[ Replace with headshot ]</span>
+          </div>
+        </div>
+
+        <div class="photo-card-badge">
+          <div class="badge-avatar">V</div>
+          <div>
+            <div class="badge-name">Velia Gonzalez</div>
+            <div class="badge-title">MS, CCC-SLP · Bilingual English & Spanish</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     CREDENTIAL STRIP
+============================================= -->
+  <div class="credential-strip">
+    <div class="credential-item">
+      <div class="credential-num">15+</div>
+      <div class="credential-label">Years of experience</div>
+    </div>
+    <div class="credential-item">
+      <div class="credential-num">MS</div>
+      <div class="credential-label">Master of Science · Speech-Language Pathology</div>
+    </div>
+    <div class="credential-item">
+      <div class="credential-num">CCC-SLP</div>
+      <div class="credential-label">Certificate of Clinical Competence · ASHA</div>
+    </div>
+    <div class="credential-item">
+      <div class="credential-num">2</div>
+      <div class="credential-label">Languages · English & Spanish</div>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+     STORY SECTION
+============================================= -->
+  <section class="story-section">
+    <div class="story-left reveal">
+      <div class="section-eyebrow">The story</div>
+      <h2 class="section-headline">A journey across <em>three continents.</em></h2>
+
+      <p>
+        Velia's path into speech therapy began in Los Angeles, California,
+        working with children with special needs in under-resourced communities.
+        She saw firsthand how much a child's ability to communicate shapes
+        everything — their confidence, their friendships, their place in the world.
+      </p>
+
+      <div class="story-pull">
+        "I kept meeting children who had so much to share. They just needed someone
+        to meet them where they were."
+      </div>
+
+      <p>
+        That conviction took her across parts of South America and West Africa,
+        where she worked with children and families in vastly different cultural
+        and linguistic contexts. What she found everywhere was the same: children
+        who wanted to connect, parents who wanted to help, and a universal human
+        need to be heard and understood.
+      </p>
+
+      <p>
+        Those experiences shaped everything about how Velia practices today —
+        her patience, her cultural sensitivity, her belief that therapy must
+        be built around the whole child, not just a set of clinical benchmarks.
+      </p>
+    </div>
+
+    <div class="story-right reveal">
+      <div class="journey-item">
+        <div class="journey-dot">🌆</div>
+        <div class="journey-content">
+          <div class="journey-place">Los Angeles, California</div>
+          <div class="journey-title">Where it began</div>
+          <div class="journey-desc">
+            Started her career supporting children with special needs in
+            LA's diverse communities — learning that communication is the
+            foundation of everything a child becomes.
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-dot">🌎</div>
+        <div class="journey-content">
+          <div class="journey-place">South America</div>
+          <div class="journey-title">A new perspective</div>
+          <div class="journey-desc">
+            Worked alongside families across South America, deepening her
+            bilingual practice and her understanding of how culture, language,
+            and family shape a child's communication journey.
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-dot">🌍</div>
+        <div class="journey-content">
+          <div class="journey-place">West Africa</div>
+          <div class="journey-title">The universal language of healing</div>
+          <div class="journey-desc">
+            Inspired by children and families navigating communication
+            across language barriers and limited resources — proof that
+            the desire to express and connect is universal.
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-item">
+        <div class="journey-dot">🏙️</div>
+        <div class="journey-content">
+          <div class="journey-place">Columbus, Ohio</div>
+          <div class="journey-title">Vela Speech Therapy</div>
+          <div class="journey-desc">
+            Founded Vela to bring all of that experience home — offering
+            Columbus families a therapist who has seen what's possible
+            when children are truly seen and supported.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     PHILOSOPHY PULLQUOTE
+============================================= -->
+  <div class="philosophy-section">
+    <div class="philosophy-inner">
+      <span class="philosophy-mark">"</span>
+      <div class="philosophy-quote">Every child has a voice.</div>
+      <div class="philosophy-source">— Velia Gonzalez, MS CCC-SLP · Founding Philosophy</div>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+     SPECIALIZATIONS
+============================================= -->
+  <section class="spec-section">
+    <div class="spec-header reveal">
+      <div class="section-eyebrow">Areas of expertise</div>
+      <h2 class="section-headline">What Velia <em>specializes in.</em></h2>
+      <p>
+        Fifteen years of clinical experience across diverse communities has shaped
+        a practice built on evidence-based methods, cultural competency, and
+        deep specialization in the areas Columbus families need most.
+      </p>
+    </div>
+
+    <div class="spec-grid">
+      <div class="spec-card reveal">
+        <span class="spec-icon">🧠</span>
+        <div class="spec-title">Executive Function</div>
+        <div class="spec-desc">
+          Specialized support for children navigating attention, organization,
+          working memory, and the language skills that underpin academic success.
+          A core specialty at Vela.
+        </div>
+      </div>
+
+      <div class="spec-card reveal">
+        <span class="spec-icon">🗣️</span>
+        <div class="spec-title">Articulation & Phonology</div>
+        <div class="spec-desc">
+          Helping children produce sounds clearly so they can be understood —
+          by strangers, teachers, and friends, not just the people who love them.
+        </div>
+      </div>
+
+      <div class="spec-card reveal">
+        <span class="spec-icon">✨</span>
+        <div class="spec-title">Childhood Apraxia of Speech</div>
+        <div class="spec-desc">
+          Evidence-based, intensive treatment for CAS — one of the most
+          misdiagnosed and undertreated speech motor disorders in young children.
+        </div>
+      </div>
+
+      <div class="spec-card reveal">
+        <span class="spec-icon">💬</span>
+        <div class="spec-title">Early Language Development</div>
+        <div class="spec-desc">
+          Play-based, parent-involved therapy for toddlers and preschoolers
+          building their first words, sentences, and social communication skills.
+        </div>
+      </div>
+
+      <div class="spec-card reveal">
+        <span class="spec-icon">🤝</span>
+        <div class="spec-title">Social Communication</div>
+        <div class="spec-desc">
+          Supporting children in building the conversational and social language
+          skills that help them make friends, navigate school, and belong.
+        </div>
+      </div>
+
+      <div class="spec-card reveal">
+        <!-- TODO: Add or replace this card with an additional specialty if applicable -->
+        <span class="spec-icon">📚</span>
+        <div class="spec-title">Language-Based Learning</div>
+        <div class="spec-desc">
+          Targeted support for children whose reading, writing, or academic
+          performance is affected by underlying language processing differences.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     BILINGUAL SECTION
+============================================= -->
+  <section class="language-section">
+    <div class="section-eyebrow reveal">Bilingual practice</div>
+    <h2 class="section-headline reveal">Serving families in <em>English & Spanish.</em></h2>
+    <p class="language-body reveal">
+      Velia is a fully bilingual clinician — not just conversationally, but clinically.
+      She can assess, diagnose, and deliver therapy in both English and Spanish,
+      and understands the unique considerations for bilingual children and families.
+      No interpreter needed. No nuance lost.
+    </p>
+    <div class="language-tags reveal">
+      <div class="language-tag">
+        <span class="language-tag-flag">🇺🇸</span>
+        English
+      </div>
+      <div class="language-tag">
+        <span class="language-tag-flag">🇲🇽</span>
+        Spanish / Español
+      </div>
+    </div>
+  </section>
+
+
+<!-- =============================================
+     CTA
+============================================= -->
+  <section class="cta-section">
+    <div class="cta-inner reveal">
+      <div class="section-eyebrow">Ready to connect?</div>
+      <h2 class="section-headline">Let's talk about <em>your child.</em></h2>
+      <p>
+        A free 15-minute phone call is the first step. No forms, no intake maze —
+        just a real conversation with Velia about what you're seeing and how she can help.
+      </p>
+      <a href="/index.html#contact" class="btn-primary">Schedule a Free Call</a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><span>Vela </span>Speech Therapy</div>
+    <div class="footer-text">Serving Columbus, Ohio and surrounding communities</div>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/summer-programs.html">Summer Programs</a>
+      <a href="/index.html#contact">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+          let delay = 0;
+          siblings.forEach((sib, idx) => {
+            if (sib === entry.target) delay = idx * 80;
+          });
+          setTimeout(() => entry.target.classList.add('visible'), delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>
