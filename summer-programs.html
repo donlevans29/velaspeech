@@ -1134,68 +1134,33 @@ nav {
       transform: translateY(0);
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      nav { padding: 0 24px; }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 48px; }
+    .hero-right { display: none; }
+    .nav-cta { display: none; }
+    
+    section { padding: 72px 24px; }
+    .pain-section { grid-template-columns: 1fr; gap: 48px; }
+    .tried-grid { grid-template-columns: 1fr; }
+    .dream-outcomes { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .process-steps::before { display: none; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonial-card:nth-child(2) { margin-top: 0; }
+    .cta-section { grid-template-columns: 1fr; padding: 72px 24px; gap: 48px; }
+    .stat-strip { gap: 40px; padding: 36px 24px; }
+    footer { flex-direction: column; text-align: center; padding: 36px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
 
-      section {
-        padding: 72px 24px;
-      }
-
-      .hero {
-        padding: 110px 24px 64px;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .programs-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .program-card.featured {
-        transform: none;
-      }
-
-      .program-card.featured:hover {
-        transform: translateY(-6px);
-      }
-
-      .expect-section {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .cta-section {
-        grid-template-columns: 1fr;
-        padding: 72px 24px;
-        gap: 48px;
-      }
-
-      footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 36px 24px;
-      }
-
-      .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .pullquote-strip {
-        padding: 64px 24px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero-headline {
-        font-size: 2.4rem;
-      }
-    }
+  @media (max-width: 600px) {
+    .hero-headline { font-size: 2.4rem; }
+    .process-steps { grid-template-columns: 1fr; }
+  }
   </style>
 </head>
 
