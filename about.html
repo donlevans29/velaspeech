@@ -444,6 +444,39 @@
     gap: 14px;
   }
 
+    /* Journey photo */
+  .journey-photo {
+    width: 100%;
+    max-width: 320px;   /* ← change this to adjust width */
+    height: 180px;      /* ← change this to adjust height */
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(14,27,46,0.05);
+    border: 1px solid var(--border);
+  }
+
+  .journey-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .journey-item:hover .journey-photo img { transform: scale(1.03); }
+
+  .journey-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;  /* ← keep in sync with height above */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(90,122,96,0.07) 0%, rgba(196,98,45,0.05) 100%);
+  }
+
   .badge-avatar {
     width: 44px;
     height: 44px;
@@ -1128,14 +1161,17 @@
 
     <div class="story-right reveal">
       <div class="journey-item">
-        <div class="journey-dot">🌆</div>
+        <div class="journey-dot">🏙️</div>
         <div class="journey-content">
-          <div class="journey-place">Los Angeles, California</div>
-          <div class="journey-title">Where it began</div>
+          <div class="journey-place">Columbus, Ohio</div>
+          <div class="journey-title">Vela Speech Therapy</div>
           <div class="journey-desc">
-            Started her career supporting children with special needs in
-            LA's diverse communities — learning that communication is the
-            foundation of everything a child becomes.
+            Founded Vela to bring all of that experience home — offering
+            Columbus families a therapist who has seen what's possible
+            when children are truly seen and supported.
+          </div>
+          <div class="journey-photo">
+            <img src="/images/velia-los-angeles.jpg" alt="Velia in Los Angeles, California">
           </div>
         </div>
       </div>
@@ -1150,6 +1186,8 @@
             bilingual practice and her understanding of how culture, language,
             and family shape a child's communication journey.
           </div>
+          <div class="journey-photo">
+            <img src="/images/velia-los-angeles.jpg" alt="Velia in South America">
         </div>
       </div>
 
@@ -1163,6 +1201,8 @@
             across language barriers and limited resources — proof that
             the desire to express and connect is universal.
           </div>
+          <div class="journey-photo">
+            <img src="/images/africa_family_of_two.jpg" alt="Velia in West Africa">
         </div>
       </div>
 
@@ -1176,6 +1216,8 @@
             Columbus families a therapist who has seen what's possible
             when children are truly seen and supported.
           </div>
+          <div class="journey-photo">
+            <img src="/images/speeching_a_child_chin_.jpg" alt="Velia in Columbus, Ohio">
         </div>
       </div>
     </div>
