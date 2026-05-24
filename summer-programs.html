@@ -457,7 +457,8 @@ nav {
 
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      /* each card needs at least 260px - if there isn't room, wraps to next row automatically */
       gap: 24px;
     }
 
