@@ -42,6 +42,7 @@
       background: var(--cream);
       color: var(--text-dark);
       overflow-x: hidden;
+      /* prevent any horizontal scroll */
     }
 
     body::before {
@@ -402,7 +403,7 @@
 
     .hero-tags {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
       animation: fadeUp 0.8s 0.45s ease forwards;
       opacity: 0;
@@ -415,8 +416,8 @@
       background: white;
       border: 1px solid var(--border);
       border-radius: 50px;
-      padding: 8px 16px;
-      font-size: 0.82rem;
+      padding: 8px 14px;
+      font-size: 0.8rem;
       color: var(--text-mid);
       font-weight: 400;
       box-shadow: 0 2px 8px rgba(14, 27, 46, 0.05);
@@ -430,28 +431,16 @@
       flex-shrink: 0;
     }
 
-    .hero-tag.format {
-      border-color: rgba(90, 122, 96, 0.25);
-    }
-
-    .hero-tag.pay .hero-tag-dot {
-      background: var(--terracotta);
-    }
-
-    .hero-tag.pay {
-      border-color: rgba(196, 98, 45, 0.25);
-    }
-
-    /* ===== SERVICE FILTER STRIP ===== */
+    /* ===== FILTER STRIP — desktop only ===== */
     .filter-strip {
       background: var(--deep-navy);
-      padding: 24px 48px;
+      padding: 20px 48px;
       display: flex;
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
       position: sticky;
-      top: 61px;
+      top: 68px;
       z-index: 90;
     }
 
@@ -503,9 +492,10 @@
       font-weight: 300;
     }
 
+    /* Desktop: 2-col grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
 
@@ -517,10 +507,11 @@
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
-      gap: 0;
       position: relative;
       overflow: hidden;
       cursor: default;
+      min-width: 0;
+      /* prevent overflow */
     }
 
     .service-card::before {
@@ -545,10 +536,11 @@
       transform: scaleX(1);
     }
 
-    /* Featured / highlighted card */
+    /* Featured card — full width, 2-col internal layout on desktop */
     .service-card.featured {
       background: var(--deep-navy);
-      grid-column: span 2;
+      grid-column: 1 / -1;
+      /* spans full row, works with any column count */
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 48px;
@@ -558,10 +550,6 @@
     .service-card.featured::before {
       background: linear-gradient(90deg, var(--gold), var(--terracotta));
     }
-
-    .service-card-left {}
-
-    .service-card-right {}
 
     .service-icon {
       font-size: 2.2rem;
@@ -706,6 +694,7 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      min-width: 0;
     }
 
     .format-card:hover {
@@ -835,6 +824,7 @@
       border-radius: 18px;
       padding: 28px 24px;
       transition: all 0.3s ease;
+      min-width: 0;
     }
 
     .pay-card:hover {
@@ -1146,35 +1136,65 @@
 
       .hero {
         padding: 110px 24px 64px;
+        min-height: auto;
       }
 
+      /* ── FILTER STRIP: hidden on mobile ── */
       .filter-strip {
-        padding: 16px 24px;
-        top: 57px;
+        display: none;
       }
 
+      /* ── SERVICES: single column ── */
       .services-grid {
         grid-template-columns: 1fr;
       }
 
+      /* ── FEATURED CARD: stack vertically ── */
       .service-card.featured {
-        grid-column: span 1;
-        grid-template-columns: 1fr;
-        gap: 28px;
+        grid-column: 1;
+        /* don't span */
+        display: flex;
+        /* switch from grid to flex */
+        flex-direction: column;
+        /* stack left then right */
+        gap: 24px;
       }
 
+      /* ── FORMAT: single column ── */
       .format-section {
         grid-template-columns: 1fr;
+        padding: 72px 24px;
       }
 
+      /* ── PAY: single column ── */
       .pay-grid {
         grid-template-columns: 1fr;
       }
 
+      /* ── CTA ── */
       .cta-section {
         padding: 72px 24px;
       }
 
+      /* ── FAQ ── */
+      .faq-list {
+        max-width: 100%;
+      }
+
+      .faq-question {
+        padding: 18px 20px;
+        font-size: 0.95rem;
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+      }
+
+      .faq-item.open .faq-answer {
+        padding: 0 20px 18px;
+      }
+
+      /* ── FOOTER ── */
       footer {
         flex-direction: column;
         text-align: center;
@@ -1189,7 +1209,19 @@
 
     @media (max-width: 600px) {
       .hero-headline {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
+      }
+
+      .hero-eyebrow {
+        font-size: 0.72rem;
+      }
+
+      .service-card {
+        padding: 28px 20px;
+      }
+
+      .format-card {
+        padding: 28px 20px;
       }
     }
   </style>
@@ -1226,9 +1258,7 @@
   </div>
 
 
-  <!-- =============================================
-     HERO
-============================================= -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-eyebrow">Columbus, Ohio · Bilingual · In-Person & Teletherapy</div>
@@ -1242,15 +1272,15 @@
         to grow, connect, and be heard.
       </p>
       <div class="hero-tags">
-        <div class="hero-tag format">
+        <div class="hero-tag">
           <div class="hero-tag-dot"></div>
-          In-person sessions available
+          In-person available
         </div>
-        <div class="hero-tag format">
+        <div class="hero-tag">
           <div class="hero-tag-dot"></div>
           Teletherapy available
         </div>
-        <div class="hero-tag pay">
+        <div class="hero-tag">
           <div class="hero-tag-dot" style="background:var(--terracotta)"></div>
           Private pay · Superbills provided
         </div>
@@ -1263,10 +1293,7 @@
   </section>
 
 
-  <!-- =============================================
-     STICKY FILTER STRIP
-     JS below handles active state + smooth scroll
-============================================= -->
+  <!-- FILTER STRIP — desktop only, hidden on mobile -->
   <div class="filter-strip" id="filter-strip">
     <span class="filter-label">Jump to:</span>
     <button class="filter-btn active" data-target="services-section">All Services</button>
@@ -1279,9 +1306,7 @@
   </div>
 
 
-  <!-- =============================================
-     SERVICES GRID
-============================================= -->
+  <!-- SERVICES GRID -->
   <section class="services-section" id="services-section">
     <div class="services-header reveal">
       <div class="section-eyebrow">What we treat</div>
@@ -1295,7 +1320,7 @@
 
     <div class="services-grid">
 
-      <!-- FEATURED: Executive Function (Velia's core specialty) -->
+      <!-- FEATURED: Executive Function -->
       <div class="service-card featured reveal" id="executive-function">
         <div class="service-card-left">
           <span class="service-icon">🧠</span>
@@ -1306,8 +1331,6 @@
             planning, attention, working memory, flexible thinking, and self-regulation.
             When these skills are underdeveloped, it shows up in school performance,
             emotional regulation, and the ability to organize and express thoughts clearly.
-            Velia's executive function specialty is one of the most sought-after services
-            at Vela and a core focus of the practice.
           </p>
         </div>
         <div class="service-card-right">
@@ -1343,270 +1366,205 @@
         </div>
       </div>
 
-      <!-- Early Language Development -->
       <div class="service-card reveal" id="early-language">
         <span class="service-icon">🌱</span>
         <div class="service-category">Early Childhood</div>
         <div class="service-name">Early Language Development</div>
-        <p class="service-desc">
-          Play-based, parent-involved therapy for toddlers and preschoolers building
-          their first words, sentences, and the foundation for everything that comes next.
-          Parents are active participants — not waiting in the lobby.
-        </p>
+        <p class="service-desc">Play-based, parent-involved therapy for toddlers and preschoolers building their first
+          words, sentences, and the foundation for everything that comes next. Parents are active participants — not
+          waiting in the lobby.</p>
         <div class="service-signs">
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Limited vocabulary for their age
+            <div class="service-sign-dot">✓</div>Limited vocabulary for their age
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Not yet combining words into short phrases
+            <div class="service-sign-dot">✓</div>Not yet combining words into short phrases
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Difficulty following simple instructions
+            <div class="service-sign-dot">✓</div>Difficulty following simple instructions
           </div>
         </div>
-        <a href="/index.html#contact" class="service-link">
-          Get started
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <a href="/index.html#contact" class="service-link">Get started <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
-          </svg>
-        </a>
+          </svg></a>
       </div>
 
-      <!-- Articulation & Phonology -->
       <div class="service-card reveal" id="articulation">
         <span class="service-icon">🗣️</span>
         <div class="service-category">Speech Clarity</div>
         <div class="service-name">Articulation & Phonology</div>
-        <p class="service-desc">
-          Helping children produce sounds clearly so they can be understood — by
-          strangers, teachers, and friends, not just the people who love them most.
-          Includes both single sound errors and broader phonological pattern differences.
-        </p>
+        <p class="service-desc">Helping children produce sounds clearly so they can be understood — by strangers,
+          teachers, and friends, not just the people who love them most. Includes both single sound errors and broader
+          phonological pattern differences.</p>
         <div class="service-signs">
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Hard to understand outside the family
+            <div class="service-sign-dot">✓</div>Hard to understand outside the family
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Substituting, omitting, or distorting sounds
+            <div class="service-sign-dot">✓</div>Substituting, omitting, or distorting sounds
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Peers or teachers commenting on speech clarity
+            <div class="service-sign-dot">✓</div>Peers or teachers commenting on speech clarity
           </div>
         </div>
-        <a href="/index.html#contact" class="service-link">
-          Get started
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <a href="/index.html#contact" class="service-link">Get started <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
-          </svg>
-        </a>
+          </svg></a>
       </div>
 
-      <!-- Childhood Apraxia of Speech -->
       <div class="service-card reveal" id="cas">
         <span class="service-icon">✨</span>
         <div class="service-category">Motor Speech</div>
         <div class="service-name">Childhood Apraxia of Speech</div>
-        <p class="service-desc">
-          One of the most misunderstood and misdiagnosed speech disorders. CAS is a motor
-          speech disorder — the brain has difficulty coordinating the movements needed for
-          speech. It requires intensive, specialized treatment from a clinician who knows it.
-        </p>
+        <p class="service-desc">One of the most misunderstood and misdiagnosed speech disorders. CAS is a motor speech
+          disorder — the brain has difficulty coordinating the movements needed for speech. It requires intensive,
+          specialized treatment.</p>
         <div class="service-signs">
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Inconsistent sound errors — different each time
+            <div class="service-sign-dot">✓</div>Inconsistent sound errors — different each time
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Longer words are noticeably harder than short ones
+            <div class="service-sign-dot">✓</div>Longer words are noticeably harder than short ones
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Limited progress with previous speech therapy
+            <div class="service-sign-dot">✓</div>Limited progress with previous speech therapy
           </div>
         </div>
-        <a href="/index.html#contact" class="service-link">
-          Get started
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <a href="/index.html#contact" class="service-link">Get started <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
-          </svg>
-        </a>
+          </svg></a>
       </div>
 
-      <!-- Social Communication -->
       <div class="service-card reveal" id="social-communication">
         <span class="service-icon">🤝</span>
         <div class="service-category">Connection & Belonging</div>
         <div class="service-name">Social Communication</div>
-        <p class="service-desc">
-          For children who understand language but struggle with the unwritten rules —
-          taking turns in conversation, reading social cues, making and keeping friends.
-          Often a fit for children with autism spectrum differences or pragmatic language challenges.
-        </p>
+        <p class="service-desc">For children who understand language but struggle with the unwritten rules — taking
+          turns in conversation, reading social cues, making and keeping friends. Often a fit for children with autism
+          spectrum differences.</p>
         <div class="service-signs">
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Difficulty joining or maintaining conversations
+            <div class="service-sign-dot">✓</div>Difficulty joining or maintaining conversations
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Struggles with friendship or peer relationships
+            <div class="service-sign-dot">✓</div>Struggles with friendship or peer relationships
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Misreads social cues or tone of voice
+            <div class="service-sign-dot">✓</div>Misreads social cues or tone of voice
           </div>
         </div>
-        <a href="/index.html#contact" class="service-link">
-          Get started
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <a href="/index.html#contact" class="service-link">Get started <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
-          </svg>
-        </a>
+          </svg></a>
       </div>
 
-      <!-- Language-Based Learning -->
       <div class="service-card reveal" id="language-learning">
         <span class="service-icon">📚</span>
         <div class="service-category">Academic Language</div>
         <div class="service-name">Language-Based Learning</div>
-        <p class="service-desc">
-          When a child's reading, writing, or classroom performance is affected by
-          underlying language processing differences, speech therapy can be the missing piece.
-          Velia works closely with school teams and parents to bridge the gap.
-        </p>
+        <p class="service-desc">When a child's reading, writing, or classroom performance is affected by underlying
+          language processing differences, speech therapy can be the missing piece. Velia works closely with school
+          teams and parents.</p>
         <div class="service-signs">
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Struggles with reading comprehension or decoding
+            <div class="service-sign-dot">✓</div>Struggles with reading comprehension or decoding
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Difficulty expressing ideas in writing
+            <div class="service-sign-dot">✓</div>Difficulty expressing ideas in writing
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Trouble processing or following classroom instruction
+            <div class="service-sign-dot">✓</div>Trouble processing or following classroom instruction
           </div>
         </div>
-        <a href="/index.html#contact" class="service-link">
-          Get started
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <a href="/index.html#contact" class="service-link">Get started <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
-          </svg>
-        </a>
+          </svg></a>
       </div>
 
-      <!-- Fluency -->
       <div class="service-card reveal" id="fluency">
         <span class="service-icon">🌊</span>
         <div class="service-category">Fluency</div>
         <div class="service-name">Fluency & Stuttering</div>
-        <p class="service-desc">
-          Stuttering is more than a speech pattern — it affects confidence, social comfort,
-          and how a child sees themselves as a communicator. Therapy focuses on both
-          fluency techniques and building the confidence to speak in any situation.
-        </p>
+        <p class="service-desc">Stuttering is more than a speech pattern — it affects confidence, social comfort, and
+          how a child sees themselves as a communicator. Therapy focuses on both fluency techniques and building
+          confidence to speak in any situation.</p>
         <div class="service-signs">
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Repetitions, prolongations, or blocks when speaking
+            <div class="service-sign-dot">✓</div>Repetitions, prolongations, or blocks when speaking
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Avoids speaking up in class or social situations
+            <div class="service-sign-dot">✓</div>Avoids speaking up in class or social situations
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Visible tension or frustration during speech
+            <div class="service-sign-dot">✓</div>Visible tension or frustration during speech
           </div>
         </div>
-        <a href="/index.html#contact" class="service-link">
-          Get started
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <a href="/index.html#contact" class="service-link">Get started <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
-          </svg>
-        </a>
+          </svg></a>
       </div>
 
-      <!-- AAC -->
       <div class="service-card reveal" id="aac">
         <span class="service-icon">💡</span>
         <div class="service-category">Alternative Communication</div>
         <div class="service-name">AAC — Augmentative & Alternative Communication</div>
-        <p class="service-desc">
-          AAC supports children who are still building verbal communication — through
-          picture boards, speech-generating devices, or apps. Every child deserves
-          a way to be heard. AAC is not a last resort; it is a voice.
-        </p>
+        <p class="service-desc">AAC supports children who are still building verbal communication — through picture
+          boards, speech-generating devices, or apps. Every child deserves a way to be heard. AAC is not a last resort;
+          it is a voice.</p>
         <div class="service-signs">
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Limited or no verbal speech
+            <div class="service-sign-dot">✓</div>Limited or no verbal speech
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Frustration or behavioral signs from communication barriers
+            <div class="service-sign-dot">✓</div>Frustration or behavioral signs from communication barriers
           </div>
           <div class="service-sign">
-            <div class="service-sign-dot">✓</div>
-            Exploring alternatives to or alongside verbal speech
+            <div class="service-sign-dot">✓</div>Exploring alternatives to or alongside verbal speech
           </div>
         </div>
-        <a href="/index.html#contact" class="service-link">
-          Get started
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <a href="/index.html#contact" class="service-link">Get started <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
-          </svg>
-        </a>
+          </svg></a>
       </div>
 
     </div>
   </section>
 
 
-  <!-- =============================================
-     SESSION FORMATS
-============================================= -->
+  <!-- FORMAT SECTION -->
   <section class="format-section">
     <div class="format-card reveal">
       <div class="format-icon">🏢</div>
       <div class="format-name">In-Person Sessions</div>
-      <p class="format-desc">
-        Face-to-face therapy at our Columbus location. In-person sessions are ideal for
-        younger children, hands-on activities, and families who prefer a dedicated
-        therapy environment outside the home.
-      </p>
+      <p class="format-desc">Face-to-face therapy at our Columbus location. In-person sessions are ideal for younger
+        children, hands-on activities, and families who prefer a dedicated therapy environment outside the home.</p>
       <div class="format-details">
         <div class="format-detail">
-          <div class="format-detail-check">✓</div>
-          Columbus area — serving Hilliard, Dublin, Worthington & Westerville
+          <div class="format-detail-check">✓</div>Columbus area — serving Hilliard, Dublin, Worthington & Westerville
         </div>
         <div class="format-detail">
-          <div class="format-detail-check">✓</div>
-          Play-based environment with therapy-specific materials
+          <div class="format-detail-check">✓</div>Play-based environment with therapy-specific materials
         </div>
         <div class="format-detail">
-          <div class="format-detail-check">✓</div>
-          Parent observation and coaching built into every session
+          <div class="format-detail-check">✓</div>Parent observation and coaching built into every session
         </div>
         <div class="format-detail">
-          <!-- TODO: Add actual address once confirmed -->
-          <div class="format-detail-check">✓</div>
-          <span>Columbus, OH · <em style="color:var(--text-light)">Address shared upon booking</em></span>
+          <div class="format-detail-check">✓</div><span>Columbus, OH · <em style="color:var(--text-light)">Address
+              shared upon booking</em></span>
         </div>
       </div>
     </div>
@@ -1614,186 +1572,123 @@
     <div class="format-card reveal">
       <div class="format-icon">💻</div>
       <div class="format-name">Teletherapy Sessions</div>
-      <p class="format-desc">
-        Fully effective, live one-on-one therapy delivered via secure video.
-        Teletherapy makes it possible to work with Velia regardless of location,
-        schedule, or mobility — without sacrificing quality or connection.
-      </p>
+      <p class="format-desc">Fully effective, live one-on-one therapy delivered via secure video. Teletherapy makes it
+        possible to work with Velia regardless of location, schedule, or mobility — without sacrificing quality or
+        connection.</p>
       <div class="format-details">
         <div class="format-detail">
-          <div class="format-detail-check">✓</div>
-          Available to families across Ohio
+          <div class="format-detail-check">✓</div>Available to families across Ohio
         </div>
         <div class="format-detail">
-          <div class="format-detail-check">✓</div>
-          Secure, HIPAA-compliant video platform
+          <div class="format-detail-check">✓</div>Secure, HIPAA-compliant video platform
         </div>
         <div class="format-detail">
-          <div class="format-detail-check">✓</div>
-          Same parent-involvement and home strategy approach
+          <div class="format-detail-check">✓</div>Same parent-involvement and home strategy approach
         </div>
         <div class="format-detail">
-          <div class="format-detail-check">✓</div>
-          All you need is a device and a quiet space
+          <div class="format-detail-check">✓</div>All you need is a device and a quiet space
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- =============================================
-     PRIVATE PAY
-============================================= -->
+  <!-- PRIVATE PAY -->
   <section class="pay-section">
     <div class="section-eyebrow reveal">Fees & payment</div>
     <h2 class="section-headline reveal">Private pay —<br><em>transparent & straightforward.</em></h2>
-    <p class="pay-intro reveal">
-      Vela is a private pay practice. This means no insurance gatekeeping, no pre-authorization
-      delays, and no limits on the therapy your child actually needs. You get the full
-      picture upfront — no surprises.
-    </p>
-
+    <p class="pay-intro reveal">Vela is a private pay practice. This means no insurance gatekeeping, no
+      pre-authorization delays, and no limits on the therapy your child actually needs. You get the full picture upfront
+      — no surprises.</p>
     <div class="pay-grid">
       <div class="pay-card reveal">
         <span class="pay-card-icon">🧾</span>
         <div class="pay-card-title">Superbills Provided</div>
-        <div class="pay-card-desc">
-          We provide detailed superbills after each session so you can submit
-          to your insurance for potential out-of-network reimbursement.
-          Many families recover a significant portion of costs this way.
+        <div class="pay-card-desc">We provide detailed superbills after each session so you can submit to your insurance
+          for potential out-of-network reimbursement. Many families recover a significant portion of costs this way.
         </div>
       </div>
       <div class="pay-card reveal">
         <span class="pay-card-icon">💳</span>
         <div class="pay-card-title">HSA & FSA Accepted</div>
-        <div class="pay-card-desc">
-          Speech therapy is an eligible expense for Health Savings Accounts
-          and Flexible Spending Accounts. Your HSA/FSA card works directly
-          at the time of payment.
-        </div>
+        <div class="pay-card-desc">Speech therapy is an eligible expense for Health Savings Accounts and Flexible
+          Spending Accounts. Your HSA/FSA card works directly at the time of payment.</div>
       </div>
       <div class="pay-card reveal">
         <span class="pay-card-icon">📞</span>
         <div class="pay-card-title">Fees Discussed on Your Call</div>
-        <div class="pay-card-desc">
-          <!-- TODO: Add specific session rates here when ready to publish -->
-          Session rates are shared transparently during your free 15-minute
-          phone call. No obligation, no surprise invoices — just a clear
-          conversation before you commit to anything.
-        </div>
+        <div class="pay-card-desc">Session rates are shared transparently during your free 15-minute phone call. No
+          obligation, no surprise invoices — just a clear conversation before you commit to anything.</div>
       </div>
     </div>
-
     <div class="pay-note reveal">
-      <strong>Not sure about out-of-network benefits?</strong> Ask your insurance provider:
-      "Do I have out-of-network speech therapy benefits?" and "What is my out-of-network deductible?"
-      Many families are surprised by what their plan covers once they ask the right questions.
-      Velia is happy to walk you through this on your free call.
+      <strong>Not sure about out-of-network benefits?</strong> Ask your insurance provider: "Do I have out-of-network
+      speech therapy benefits?" and "What is my out-of-network deductible?" Many families are surprised by what their
+      plan covers. Velia is happy to walk you through this on your free call.
     </div>
   </section>
 
 
-  <!-- =============================================
-     FAQ
-============================================= -->
+  <!-- FAQ -->
   <section class="faq-section">
     <div class="faq-header reveal">
       <div class="section-eyebrow">Common questions</div>
       <h2 class="section-headline">Before you <em>reach out.</em></h2>
     </div>
-
     <div class="faq-list reveal">
       <div class="faq-item">
-        <button class="faq-question">
-          How do I know which service my child needs?
-          <span class="faq-chevron">▾</span>
-        </button>
-        <div class="faq-answer">
-          You don't need to know — that's what the evaluation is for. The free 15-minute
-          phone call helps Velia understand what you're seeing, and a play-based evaluation
-          identifies exactly what your child needs. Many children present with overlapping
-          areas, and Velia will give you a clear picture after the assessment.
+        <button class="faq-question">How do I know which service my child needs?<span
+            class="faq-chevron">▾</span></button>
+        <div class="faq-answer">You don't need to know — that's what the evaluation is for. The free 15-minute phone
+          call helps Velia understand what you're seeing, and a play-based evaluation identifies exactly what your child
+          needs. Many children present with overlapping areas, and Velia will give you a clear picture after the
+          assessment.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How long are sessions and how often does my child need to come?<span
+            class="faq-chevron">▾</span></button>
+        <div class="faq-answer">Sessions are typically 45–55 minutes. Frequency depends on your child's needs and goals
+          — most children are seen 1–2 times per week. Velia will give you a specific recommendation as part of the
+          evaluation and planning process.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is teletherapy as effective as in-person?<span
+            class="faq-chevron">▾</span></button>
+        <div class="faq-answer">For most speech and language goals, research supports teletherapy as equally effective
+          to in-person treatment. It works particularly well for school-age children and for families with scheduling or
+          transportation constraints. Velia will discuss which format is the best fit for your child during your call.
         </div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">
-          How long are sessions and how often does my child need to come?
-          <span class="faq-chevron">▾</span>
-        </button>
-        <div class="faq-answer">
-          Sessions are typically 45–55 minutes. Frequency depends on your child's
-          needs and goals — most children are seen 1–2 times per week. Velia will
-          give you a specific recommendation as part of the evaluation and planning process.
-        </div>
+        <button class="faq-question">My child already gets speech at school. Do they still need private therapy?<span
+            class="faq-chevron">▾</span></button>
+        <div class="faq-answer">School-based therapy is valuable but often limited — group sessions, frequent therapist
+          changes, and eligibility criteria that don't always reflect a child's full needs. Private therapy complements
+          school services and can accelerate progress significantly. Velia is happy to collaborate with your child's
+          school team.</div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">
-          Is teletherapy as effective as in-person?
-          <span class="faq-chevron">▾</span>
-        </button>
-        <div class="faq-answer">
-          For most speech and language goals, research supports teletherapy as equally
-          effective to in-person treatment. It works particularly well for school-age
-          children and for families with scheduling or transportation constraints.
-          Velia will discuss which format is the best fit for your child during your call.
-        </div>
+        <button class="faq-question">Do you offer services in Spanish?<span class="faq-chevron">▾</span></button>
+        <div class="faq-answer">Yes. Velia is a fully bilingual clinician — not just conversationally, but clinically.
+          She can assess, diagnose, and deliver therapy entirely in Spanish, and understands the unique considerations
+          for bilingual children. No interpreter needed, and no nuance lost in translation.</div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">
-          My child already gets speech at school. Do they still need private therapy?
-          <span class="faq-chevron">▾</span>
-        </button>
-        <div class="faq-answer">
-          School-based therapy is valuable but often limited — group sessions, frequent
-          therapist changes, and eligibility criteria that don't always reflect a child's
-          full needs. Private therapy complements school services and can accelerate
-          progress significantly. Velia is happy to collaborate with your child's school team.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          Do you offer services in Spanish?
-          <span class="faq-chevron">▾</span>
-        </button>
-        <div class="faq-answer">
-          Yes. Velia is a fully bilingual clinician — not just conversationally, but
-          clinically. She can assess, diagnose, and deliver therapy entirely in Spanish,
-          and understands the unique considerations for bilingual children. No interpreter
-          needed, and no nuance lost in translation.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          What ages do you work with?
-          <span class="faq-chevron">▾</span>
-        </button>
-        <div class="faq-answer">
-          <!-- TODO: Confirm and update age range served -->
-          Vela serves children from toddlers through early adolescence. The free phone
-          call is the best way to confirm whether your child's age and needs are a good
-          fit for the practice.
-        </div>
+        <button class="faq-question">What ages do you work with?<span class="faq-chevron">▾</span></button>
+        <div class="faq-answer">Vela serves children from toddlers through early adolescence. The free phone call is the
+          best way to confirm whether your child's age and needs are a good fit for the practice.</div>
       </div>
     </div>
   </section>
 
 
-  <!-- =============================================
-     CTA
-============================================= -->
+  <!-- CTA -->
   <section class="cta-section">
     <div class="cta-inner reveal">
       <div class="cta-eyebrow">Ready to start</div>
       <h2 class="cta-headline">Not sure where to begin?<br><em>That's what the call is for.</em></h2>
-      <p class="cta-sub">
-        A free 15-minute phone call with Velia — no forms, no commitment.
-        Just a real conversation about your child and what they need.
-      </p>
+      <p class="cta-sub">A free 15-minute phone call with Velia — no forms, no commitment. Just a real conversation
+        about your child and what they need.</p>
       <a href="/index.html#contact" class="btn-white">Schedule a Free Call</a>
     </div>
   </section>
@@ -1809,7 +1704,7 @@
       <a href="/services.html">Services</a>
       <a href="/summer-programs.html">Summer Programs</a>
       <a href="/index.html#contact">Contact</a>
-      <a href="#">Privacy Policy</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
     </div>
   </footer>
 
@@ -1857,16 +1752,14 @@
       });
     });
 
-    // ===== FILTER STRIP — smooth scroll + active state =====
+    // ===== FILTER STRIP — desktop only =====
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const targetId = btn.dataset.target;
-        const target = document.getElementById(targetId);
+        const target = document.getElementById(btn.dataset.target);
         if (target) {
-          const offset = 120; // nav + filter strip height
-          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          const top = target.getBoundingClientRect().top + window.scrollY - 120;
           window.scrollTo({ top, behavior: 'smooth' });
         }
       });
