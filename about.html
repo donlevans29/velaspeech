@@ -447,8 +447,8 @@
     /* Journey photo */
   .journey-photo {
     width: 100%;
-    max-width: 320px;   /* ← change this to adjust width */
-    height: 180px;      /* ← change this to adjust height */
+    max-width: 100%;   /* ← change this to adjust width */
+    height: 280px;      /* ← change this to adjust height */
     border-radius: 12px;
     overflow: hidden;
     background: rgba(14,27,46,0.05);
@@ -474,7 +474,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: linear-gradient(135deg, rgba(90,122,96,0.07) 0%, rgba(196,98,45,0.05) 100%);
+    background: linear-gradient(135deg, rgba(90,122,96,0.07) 0%, rgba(196,98,45,0.05) 100%)
   }
 
   .badge-avatar {
@@ -573,14 +573,19 @@
   }
 
   /* Journey timeline on the right */
-  .story-right {
+  .story-right reveal {
     display: flex;
     flex-direction: column;
     gap: 0;
+    width: 100%;
   }
 
   .journey-item {
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
     gap: 24px;
     position: relative;
     padding-bottom: 36px;
@@ -619,7 +624,12 @@
     margin-top: 2px;
   }
 
-  .journey-content {}
+  .journey-content {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
 
   .journey-place {
     font-size: 0.72rem;
@@ -1065,7 +1075,7 @@
       </h1>
       <p class="hero-sub">
         For over 15 years I've worked alongside children and families across Los Angeles,
-        South America, and West Africa — learning that the desire to be heard is universal,
+        South America, and West Africa learning that the desire to be heard is universal,
         and that the right support can unlock it in every child.
       </p>
       <div class="hero-cta-group">
@@ -1128,7 +1138,7 @@
      STORY SECTION
 ============================================= -->
   <section class="story-section">
-    <div class="story-left reveal">
+    <div class=".story-left reveal">
       <div class="section-eyebrow">The story</div>
       <h2 class="section-headline">A journey across <em>three continents.</em></h2>
 
@@ -1136,7 +1146,7 @@
         Velia's path into speech therapy began in Los Angeles, California,
         working with children with special needs in under-resourced communities.
         She saw firsthand how much a child's ability to communicate shapes
-        everything — their confidence, their friendships, their place in the world.
+        everything their confidence, their friendships, their place in the world.
       </p>
 
       <div class="story-pull">
@@ -1153,7 +1163,7 @@
       </p>
 
       <p>
-        Those experiences shaped everything about how Velia practices today —
+        Those experiences shaped everything about how Velia practices today
         her patience, her cultural sensitivity, her belief that therapy must
         be built around the whole child, not just a set of clinical benchmarks.
       </p>
@@ -1166,7 +1176,7 @@
           <div class="journey-place">Columbus, Ohio</div>
           <div class="journey-title">Vela Speech Therapy</div>
           <div class="journey-desc">
-            Founded Vela to bring all of that experience home — offering
+            Founded Vela to bring all of that experience home offering
             Columbus families a therapist who has seen what's possible
             when children are truly seen and supported.
           </div>
@@ -1187,7 +1197,8 @@
             and family shape a child's communication journey.
           </div>
           <div class="journey-photo">
-            <img src="/images/velia-los-angeles.jpg" alt="Velia in South America">
+            <img src="/images/africa_ibsah_longbeach.jpg" alt="Velia in South America">
+          </div>
         </div>
       </div>
 
@@ -1198,11 +1209,12 @@
           <div class="journey-title">The universal language of healing</div>
           <div class="journey-desc">
             Inspired by children and families navigating communication
-            across language barriers and limited resources — proof that
+            across language barriers and limited resources proof that
             the desire to express and connect is universal.
           </div>
           <div class="journey-photo">
             <img src="/images/africa_family_of_two.jpg" alt="Velia in West Africa">
+        </div>
         </div>
       </div>
 
@@ -1212,12 +1224,13 @@
           <div class="journey-place">Columbus, Ohio</div>
           <div class="journey-title">Vela Speech Therapy</div>
           <div class="journey-desc">
-            Founded Vela to bring all of that experience home — offering
+            Founded Vela to bring all of that experience home offering
             Columbus families a therapist who has seen what's possible
             when children are truly seen and supported.
           </div>
           <div class="journey-photo">
             <img src="/images/speeching_a_child_chin_.jpg" alt="Velia in Columbus, Ohio">
+          </div>
         </div>
       </div>
     </div>
@@ -1274,7 +1287,7 @@
         <span class="spec-icon">✨</span>
         <div class="spec-title">Childhood Apraxia of Speech</div>
         <div class="spec-desc">
-          Evidence-based, intensive treatment for CAS — one of the most
+          Evidence-based, intensive treatment for CAS one of the most
           misdiagnosed and undertreated speech motor disorders in young children.
         </div>
       </div>
@@ -1315,9 +1328,9 @@
 ============================================= -->
   <section class="language-section">
     <div class="section-eyebrow reveal">Bilingual practice</div>
-    <h2 class="section-headline reveal">Serving families in <em>English & Spanish.</em></h2>
+    <h2 class="section-headline reveal">Serving families in English & Spanish.</h2>
     <p class="language-body reveal">
-      Velia is a fully bilingual clinician — not just conversationally, but clinically.
+      Velia is a fully bilingual clinician not just conversationally, but clinically.
       She can assess, diagnose, and deliver therapy in both English and Spanish,
       and understands the unique considerations for bilingual children and families.
       No interpreter needed. No nuance lost.
