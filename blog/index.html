@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech Therapy Blog | Vela Speech Therapy, Columbus OH</title>
+  <meta name="description" content="Neurodiversity-affirming insights on speech, language, and executive function from Velia Gonzalez, MS, CCC-SLP, a bilingual SLP in Columbus, Ohio.">
+  <link rel="canonical" href="https://velaspeechtherapy.com/blog/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Vela Speech Therapy Blog">
+  <meta property="og:description" content="Neurodiversity-affirming insights on speech, language, and executive function for families.">
+  <meta property="og:url" content="https://velaspeechtherapy.com/blog/">
+  <meta property="og:site_name" content="Vela Speech Therapy">
+  <meta property="og:image" content="https://velaspeechtherapy.com/images/velia-los-angeles.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/blog.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "The Vela Speech Therapy Blog",
+    "url": "https://velaspeechtherapy.com/blog/",
+    "publisher": { "@type": "Organization", "name": "Vela Speech Therapy", "url": "https://velaspeechtherapy.com/" }
+  }
+  </script>
+</head>
+
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-logo"><span>Vela </span>Speech Therapy</a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/services.html">Services</a></li>
+    <li><a href="/summer-programs.html">Summer Programs</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/index.html#contact" class="nav-cta">Free Phone Call</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="mobile-nav">
+  <a href="/index.html">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/services.html">Services</a>
+  <a href="/summer-programs.html">Summer Programs</a>
+  <a href="/blog/" class="active">Blog</a>
+  <a href="/index.html#contact">Contact</a>
+  <a href="/index.html#contact" class="nav-mobile-cta">Free Phone Call</a>
+</div>
+
+<main class="blog-wrapper">
+
+  <header class="blog-intro">
+    <div class="page-eyebrow">The Vela Blog</div>
+    <h1>Notes from a neurodivergent household and a speech therapy practice</h1>
+    <p>Practical ideas on speech, language, and executive function, written by Velia Gonzalez, MS, CCC-SLP, for parents who want to understand their child, not fix them.</p>
+  </header>
+
+  <!-- POSTS: newest first. Add a new card at the top of this list for each new post. -->
+  <section class="post-grid" aria-label="Blog posts">
+
+    <a class="post-card" href="/blog/morning-routine-neurodivergent-kids-visual-schedule.html">
+      <span class="post-card-tag">Executive Function</span>
+      <h2>Why Your Morning Routines Aren't Sticking</h2>
+      <p>The small change to the visual schedule that helped a neurodivergent household's mornings finally run on their own.</p>
+      <span class="post-card-more">Read the post →</span>
+    </a>
+
+    <a class="post-card" href="/blog/what-a-honeybee-hive-taught-me-about-neurodiversity.html">
+      <span class="post-card-tag">Neurodiversity</span>
+      <h2>What a Hive Taught Me About Neurodiversity</h2>
+      <p>Honeybee research, Dogon teachings, and a different question to ask about every child: what is this child's place in the hive?</p>
+      <span class="post-card-more">Read the post →</span>
+    </a>
+
+  </section>
+
+  <section class="post-cta">
+    <h2>Have a question about your child's communication?</h2>
+    <p>Start with a free phone call. Private pay and teletherapy available, in English and Spanish.</p>
+    <a href="/index.html#contact">Book a free phone call</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-logo"><span>Vela </span>Speech Therapy</div>
+  <div class="footer-text">Serving Columbus, Ohio and surrounding communities</div>
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/services.html">Services</a>
+    <a href="/summer-programs.html">Summer Programs</a>
+    <a href="/blog/">Blog</a>
+    <a href="/index.html#contact">Contact</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
