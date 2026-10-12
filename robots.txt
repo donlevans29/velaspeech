@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /backup.html
+Disallow: /blog/_post-template.html
+
+Sitemap: https://velaspeechtherapy.com/sitemap.xml
