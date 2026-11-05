@@ -250,7 +250,7 @@ footer {
 .newsletter-note a { color: var(--text-light); }
 .newsletter-status { font-size: 0.9rem; font-weight: 500; margin-top: 12px; color: var(--sage); }
 .newsletter-status.error { color: var(--terracotta); }
-.blog-wrapper .newsletter { margin: 0 0 28px; }
+.blog-wrapper .newsletter { margin: 56px 0 0; }
 @media (max-width: 600px) {
   .newsletter { padding: 28px 22px; }
   .newsletter-fields button { flex: 1 1 100%; }
