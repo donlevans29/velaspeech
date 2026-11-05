@@ -218,3 +218,41 @@ footer {
   .post-cta { padding: 32px 24px; }
   .author-card { flex-direction: column; text-align: center; }
 }
+
+/* ===== NEWSLETTER SIGNUP ===== */
+.newsletter {
+  margin-top: 28px; padding: 34px 36px;
+  background: rgba(90,122,96,0.08); border: 1px solid rgba(90,122,96,0.25); border-radius: 22px;
+}
+.newsletter-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; }
+.newsletter h2 {
+  font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 600;
+  line-height: 1.25; letter-spacing: -0.02em; color: var(--deep-navy); margin-bottom: 8px; text-wrap: balance;
+}
+.newsletter > p { font-size: 0.95rem; line-height: 1.7; color: var(--text-mid); font-weight: 300; margin-bottom: 20px; max-width: 520px; }
+.newsletter-fields { display: flex; flex-wrap: wrap; gap: 10px; }
+.newsletter-fields input {
+  flex: 1 1 180px; min-width: 0; padding: 13px 16px;
+  border: 1.5px solid rgba(14,27,46,0.14); border-radius: 50px; background: white;
+  font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--text-dark); outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.newsletter-fields input:focus { border-color: var(--sage); box-shadow: 0 0 0 3px rgba(90,122,96,0.15); }
+.newsletter-fields button {
+  flex: 0 0 auto; padding: 13px 28px; border: none; border-radius: 50px; cursor: pointer;
+  background: var(--sage); color: white; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500;
+  transition: background 0.25s ease;
+}
+.newsletter-fields button:hover { background: var(--deep-navy); }
+.newsletter-fields button:focus-visible { outline: 2px solid var(--deep-navy); outline-offset: 2px; }
+.newsletter-fields button:disabled { opacity: 0.7; cursor: default; }
+.newsletter-note { font-size: 0.8rem; color: var(--text-light); margin-top: 12px; line-height: 1.6; }
+.newsletter-note a { color: var(--text-light); }
+.newsletter-status { font-size: 0.9rem; font-weight: 500; margin-top: 12px; color: var(--sage); }
+.newsletter-status.error { color: var(--terracotta); }
+.blog-wrapper .newsletter { margin: 0 0 28px; }
+@media (max-width: 600px) {
+  .newsletter { padding: 28px 22px; }
+  .newsletter-fields button { flex: 1 1 100%; }
+}
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
