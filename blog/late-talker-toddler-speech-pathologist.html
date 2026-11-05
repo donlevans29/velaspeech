@@ -140,6 +140,26 @@
       <a href="/index.html#contact">Book a free phone call</a>
     </section>
 
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <div class="newsletter-eyebrow">The Vela newsletter</div>
+      <h2 id="newsletter-title">Get Velia’s new posts and one practical tip each month</h2>
+      <p>Real-life strategies for communication, routines, and executive function, from bilingual speech-language pathologist Velia Gonzalez.</p>
+      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="newsletter">
+        <input type="hidden" name="source-page" value="">
+        <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+        <div class="newsletter-fields">
+          <label class="visually-hidden" for="newsletter-name">First name</label>
+          <input id="newsletter-name" type="text" name="first-name" placeholder="First name (optional)" autocomplete="given-name">
+          <label class="visually-hidden" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button type="submit">Subscribe</button>
+        </div>
+        <div class="newsletter-status" role="status" aria-live="polite"></div>
+        <div class="newsletter-note">One email a month. No spam. See our <a href="/privacy-policy.html">privacy policy</a>.</div>
+      </form>
+    </section>
+
   </article>
 
   <section class="related">
@@ -183,5 +203,6 @@
     });
   });
 </script>
+<script src="/blog/newsletter.js"></script>
 </body>
 </html>
